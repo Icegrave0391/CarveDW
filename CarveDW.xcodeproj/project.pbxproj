@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0113B4CA0CB5B9B35A62F787 /* libPods-CarveDW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E33B984E36B578A5CE39B459 /* libPods-CarveDW.a */; };
 		08B2C17022A4114100B4DF5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C16F22A4114100B4DF5E /* AppDelegate.m */; };
-		08B2C17322A4114100B4DF5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C17222A4114100B4DF5E /* ViewController.m */; };
 		08B2C17622A4114100B4DF5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17422A4114100B4DF5E /* Main.storyboard */; };
 		08B2C17822A4114300B4DF5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17722A4114300B4DF5E /* Assets.xcassets */; };
 		08B2C17B22A4114300B4DF5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17922A4114300B4DF5E /* LaunchScreen.storyboard */; };
 		08B2C17E22A4114300B4DF5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C17D22A4114300B4DF5E /* main.m */; };
 		08B2C18822A4114300B4DF5E /* CarveDWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C18722A4114300B4DF5E /* CarveDWTests.m */; };
 		08B2C19322A4114300B4DF5E /* CarveDWUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C19222A4114300B4DF5E /* CarveDWUITests.m */; };
+		08B2C1A222A411FB00B4DF5E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C1A122A411FB00B4DF5E /* HomeViewController.m */; };
+		08B2C1A922A4B3D100B4DF5E /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B2C1A822A4B3D100B4DF5E /* RevealServer.framework */; };
+		08B2C1AA22A4B3D100B4DF5E /* RevealServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08B2C1A822A4B3D100B4DF5E /* RevealServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		08B2C1AE22A4FBDB00B4DF5E /* OverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C1AD22A4FBDB00B4DF5E /* OverViewController.m */; };
+		08B2C1B222A5321600B4DF5E /* PushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C1B122A5321600B4DF5E /* PushTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +39,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		08B2C1AB22A4B3D100B4DF5E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				08B2C1AA22A4B3D100B4DF5E /* RevealServer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		08B2C16B22A4114100B4DF5E /* CarveDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarveDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B2C16E22A4114100B4DF5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		08B2C16F22A4114100B4DF5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		08B2C17122A4114100B4DF5E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		08B2C17222A4114100B4DF5E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		08B2C17522A4114100B4DF5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08B2C17722A4114300B4DF5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08B2C17A22A4114300B4DF5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +68,17 @@
 		08B2C18E22A4114300B4DF5E /* CarveDWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarveDWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B2C19222A4114300B4DF5E /* CarveDWUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarveDWUITests.m; sourceTree = "<group>"; };
 		08B2C19422A4114300B4DF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08B2C1A022A411FB00B4DF5E /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		08B2C1A122A411FB00B4DF5E /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		08B2C1A622A4B3A600B4DF5E /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "../../../../../Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/RevealServer.framework"; sourceTree = "<group>"; };
+		08B2C1A822A4B3D100B4DF5E /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
+		08B2C1AC22A4FBDA00B4DF5E /* OverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverViewController.h; sourceTree = "<group>"; };
+		08B2C1AD22A4FBDB00B4DF5E /* OverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverViewController.m; sourceTree = "<group>"; };
+		08B2C1B022A5321600B4DF5E /* PushTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushTransition.h; sourceTree = "<group>"; };
+		08B2C1B122A5321600B4DF5E /* PushTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushTransition.m; sourceTree = "<group>"; };
+		390CE5BAC1DC61A1824D8457 /* Pods-CarveDW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarveDW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarveDW/Pods-CarveDW.debug.xcconfig"; sourceTree = "<group>"; };
+		6D447A4ED01017731F47A526 /* Pods-CarveDW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarveDW.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarveDW/Pods-CarveDW.release.xcconfig"; sourceTree = "<group>"; };
+		E33B984E36B578A5CE39B459 /* libPods-CarveDW.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CarveDW.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08B2C1A922A4B3D100B4DF5E /* RevealServer.framework in Frameworks */,
+				0113B4CA0CB5B9B35A62F787 /* libPods-CarveDW.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +111,13 @@
 		08B2C16222A4114100B4DF5E = {
 			isa = PBXGroup;
 			children = (
+				08B2C1A822A4B3D100B4DF5E /* RevealServer.framework */,
 				08B2C16D22A4114100B4DF5E /* CarveDW */,
 				08B2C18622A4114300B4DF5E /* CarveDWTests */,
 				08B2C19122A4114300B4DF5E /* CarveDWUITests */,
 				08B2C16C22A4114100B4DF5E /* Products */,
+				8E7BE3E5F0FD9E51C8641376 /* Pods */,
+				513CFFE1D2E6A6011BB98DDF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,15 +134,15 @@
 		08B2C16D22A4114100B4DF5E /* CarveDW */ = {
 			isa = PBXGroup;
 			children = (
+				08B2C1AF22A531E900B4DF5E /* Utils */,
 				08B2C16E22A4114100B4DF5E /* AppDelegate.h */,
 				08B2C16F22A4114100B4DF5E /* AppDelegate.m */,
-				08B2C17122A4114100B4DF5E /* ViewController.h */,
-				08B2C17222A4114100B4DF5E /* ViewController.m */,
 				08B2C17422A4114100B4DF5E /* Main.storyboard */,
 				08B2C17722A4114300B4DF5E /* Assets.xcassets */,
-				08B2C17922A4114300B4DF5E /* LaunchScreen.storyboard */,
 				08B2C17C22A4114300B4DF5E /* Info.plist */,
 				08B2C17D22A4114300B4DF5E /* main.m */,
+				08B2C17922A4114300B4DF5E /* LaunchScreen.storyboard */,
+				08B2C1A422A4A8B100B4DF5E /* Controller */,
 			);
 			path = CarveDW;
 			sourceTree = "<group>";
@@ -132,6 +165,44 @@
 			path = CarveDWUITests;
 			sourceTree = "<group>";
 		};
+		08B2C1A422A4A8B100B4DF5E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				08B2C1A022A411FB00B4DF5E /* HomeViewController.h */,
+				08B2C1A122A411FB00B4DF5E /* HomeViewController.m */,
+				08B2C1AC22A4FBDA00B4DF5E /* OverViewController.h */,
+				08B2C1AD22A4FBDB00B4DF5E /* OverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		08B2C1AF22A531E900B4DF5E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				08B2C1B022A5321600B4DF5E /* PushTransition.h */,
+				08B2C1B122A5321600B4DF5E /* PushTransition.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		513CFFE1D2E6A6011BB98DDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08B2C1A622A4B3A600B4DF5E /* RevealServer.framework */,
+				E33B984E36B578A5CE39B459 /* libPods-CarveDW.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E7BE3E5F0FD9E51C8641376 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				390CE5BAC1DC61A1824D8457 /* Pods-CarveDW.debug.xcconfig */,
+				6D447A4ED01017731F47A526 /* Pods-CarveDW.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08B2C19722A4114300B4DF5E /* Build configuration list for PBXNativeTarget "CarveDW" */;
 			buildPhases = (
+				7B2B04CE6D41FC7BD1DBB53E /* [CP] Check Pods Manifest.lock */,
 				08B2C16722A4114100B4DF5E /* Sources */,
 				08B2C16822A4114100B4DF5E /* Frameworks */,
 				08B2C16922A4114100B4DF5E /* Resources */,
+				08B2C1AB22A4B3D100B4DF5E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,14 +330,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7B2B04CE6D41FC7BD1DBB53E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarveDW-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		08B2C16722A4114100B4DF5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08B2C17322A4114100B4DF5E /* ViewController.m in Sources */,
 				08B2C17E22A4114300B4DF5E /* main.m in Sources */,
 				08B2C17022A4114100B4DF5E /* AppDelegate.m in Sources */,
+				08B2C1AE22A4FBDB00B4DF5E /* OverViewController.m in Sources */,
+				08B2C1B222A5321600B4DF5E /* PushTransition.m in Sources */,
+				08B2C1A222A411FB00B4DF5E /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,35 +529,45 @@
 		};
 		08B2C19822A4114300B4DF5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 390CE5BAC1DC61A1824D8457 /* Pods-CarveDW.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q64PWL267Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CarveDW/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.icegrave0391.debug.CarveDW;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icegrave0391.CarveDW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		08B2C19922A4114300B4DF5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D447A4ED01017731F47A526 /* Pods-CarveDW.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q64PWL267Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CarveDW/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.icegrave0391.debug.CarveDW;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icegrave0391.CarveDW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
