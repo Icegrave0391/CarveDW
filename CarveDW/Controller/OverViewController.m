@@ -70,10 +70,11 @@
         make.left.equalTo(self.scrollView.mas_left).with.offset(98) ;
         make.width.mas_equalTo(@517) ;
         make.height.mas_equalTo(@340) ;
-        make.centerY.equalTo(self.view.mas_centerY).with.offset(100) ;          //偏移（初始上移动画）
+//        make.centerY.equalTo(self.view.mas_centerY).with.offset(100) ;          //偏移（初始上移动画）
+        make.centerY.equalTo(self.view.mas_centerY) ;
     }];
     _CAImgView1.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"over_img1"].CGImage) ;
-    _CAImgView1.layer.opacity = 1 ;
+//    _CAImgView1.layer.opacity = 0 ;
     
     _CATextView1 = [[UIView alloc] init] ;
     [self.scrollView addSubview:_CATextView1] ;
@@ -90,42 +91,25 @@
     [_CATextView1 mas_makeConstraints:^(MASConstraintMaker *make) {
         //            make.left.equalTo(self.CATitleView1.mas_left) ;
         make.right.equalTo(self.view.mas_right).with.offset(-25) ;
-        //            make.top.equalTo(self.CATitleView1.mas_bottom).with.offset(30) ;
         make.top.equalTo(self.CAImgView1.mas_top).with.offset(63) ;
         make.width.mas_equalTo(@508) ;
         make.height.mas_equalTo(@254) ;
     }];
     _CATextView1.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"over_text1"].CGImage) ;
-    _CATextView1.layer.opacity = 0 ;
+//    _CATextView1.layer.opacity = 0 ;
     
     //init
     _CATitleView1 = [[UIView alloc] init] ;
     [self.scrollView addSubview:_CATitleView1] ;
     //初始化布局
     [_CATitleView1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        //            make.left.equalTo(self.scrollView.mas_left).with.offset(735) ;
-        //            make.left.equalTo(self.CAImgView1.mas_right).with.offset(50) ;
         make.left.equalTo(self.CATextView1.mas_left) ;
         make.width.mas_equalTo(@101) ;
         make.height.mas_equalTo(@35) ;
         make.top.equalTo(self.CAImgView1.mas_top) ;
     }];
     _CATitleView1.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"over_title1"].CGImage) ;
-    _CATitleView1.layer.opacity = 0 ;
-    //init
-    _CATitleView1 = [[UIView alloc] init] ;
-    [self.scrollView addSubview:_CATitleView1] ;
-    //初始化布局
-    [_CATitleView1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        //            make.left.equalTo(self.scrollView.mas_left).with.offset(735) ;
-        //            make.left.equalTo(self.CAImgView1.mas_right).with.offset(50) ;
-        make.left.equalTo(self.CATextView1.mas_left) ;
-        make.width.mas_equalTo(@101) ;
-        make.height.mas_equalTo(@35) ;
-        make.top.equalTo(self.CAImgView1.mas_top) ;
-    }];
-    _CATitleView1.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"over_title1"].CGImage) ;
-    _CATitleView1.layer.opacity = 0 ;
+//    _CATitleView1.layer.opacity = 0 ;
     //scrollview2
     _CAImgView2 = [[UIView alloc] init] ;
     [self.scrollView addSubview:_CAImgView2] ;
@@ -223,22 +207,23 @@
     //img animation
     CABasicAnimation * imgAnimation = [CABasicAnimation animation] ;
     imgAnimation.keyPath = @"position" ;
-    imgAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.CAImgView1.center.x, self.view.center.y)] ;
+    imgAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.CAImgView1.center.x, self.CAImgView1.layer.position.y + 100)] ;
+    imgAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.CAImgView1.center.x, self.CAImgView1.layer.position.y)] ;
     imgAnimation.duration = 0.5f ;
-    imgAnimation.removedOnCompletion = NO ;
-    imgAnimation.fillMode = kCAFillModeForwards ;
+//    imgAnimation.removedOnCompletion = NO ;
+//    imgAnimation.fillMode = kCAFillModeForwards ;
     CABasicAnimation * imgOpa = [CABasicAnimation animation] ;
     imgOpa.keyPath = @"opacity" ;
     imgOpa.fromValue = [NSNumber numberWithFloat:0] ;
     imgOpa.toValue = [NSNumber numberWithFloat:1.0] ;
     imgOpa.duration = 0.5f ;
-    imgOpa.fillMode = kCAFillModeForwards ;
-    imgOpa.removedOnCompletion = NO ;
+//    imgOpa.fillMode = kCAFillModeForwards ;
+//    imgOpa.removedOnCompletion = NO ;
     CAAnimationGroup * imgGroup = [CAAnimationGroup animation] ;
     imgGroup.animations = @[imgAnimation, imgOpa] ;
     imgGroup.duration = 0.5f ;
-    imgGroup.removedOnCompletion = NO ;
-    imgGroup.fillMode = kCAFillModeForwards ;
+//    imgGroup.removedOnCompletion = NO ;
+//    imgGroup.fillMode = kCAFillModeForwards ;
     imgGroup.delegate = self ;
     [self.CAImgView1.layer addAnimation:imgGroup forKey:@"img1 init group"] ;
 //    imgAnimation.delegate = self ;
@@ -247,26 +232,32 @@
     //title animation
     CABasicAnimation * titleAnimation = [CABasicAnimation animation] ;
     titleAnimation.keyPath = @"position" ;
-    titleAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.CATitleView1.center.x, self.CATitleView1.center.y - 100)] ;
+    titleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.CATitleView1.center.x, self.CATitleView1.center.y + 100)] ;
+    titleAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.CATitleView1.center.x, self.CATitleView1.center.y)] ;
     titleAnimation.duration = 0.5f ;
-    titleAnimation.removedOnCompletion = NO ;
-    titleAnimation.fillMode = kCAFillModeForwards ;
+//    titleAnimation.removedOnCompletion = NO ;
+//    titleAnimation.fillMode = kCAFillModeForwards ;
     CABasicAnimation * titleOpa = [CABasicAnimation animation] ;
     titleOpa.keyPath = @"opacity" ;
     titleOpa.fromValue = [NSNumber numberWithFloat:0] ;
     titleOpa.toValue = [NSNumber numberWithFloat:1.0f] ;
     titleOpa.duration = 0.5f ;
-    titleOpa.fillMode = kCAFillModeForwards ;
-    titleOpa.removedOnCompletion = NO ;
-    [self.CATitleView1.layer addAnimation:titleAnimation forKey:nil] ;
-    [self.CATitleView1.layer addAnimation:titleOpa forKey:nil] ;
+//    titleOpa.fillMode = kCAFillModeForwards ;
+//    titleOpa.removedOnCompletion = NO ;
+    CAAnimationGroup * titleGroup = [CAAnimationGroup animation] ;
+    titleGroup.animations = @[titleAnimation, titleOpa] ;
+    titleGroup.duration = 0.5f ;
+    [self.CATitleView1.layer addAnimation:titleGroup forKey:nil] ;
+//    [self.CATitleView1.layer addAnimation:titleAnimation forKey:nil] ;
+//    [self.CATitleView1.layer addAnimation:titleOpa forKey:nil] ;
     //text animation
     CABasicAnimation * textAnimation = [CABasicAnimation animation] ;
     textAnimation.duration = 0.5f ;
     textAnimation.keyPath = @"position" ;
-    textAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.CATextView1.center.x, self.CATextView1.center.y - 100)] ;
-    textAnimation.removedOnCompletion = NO ;
-    textAnimation.fillMode = kCAFillModeForwards ;
+    textAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.CATextView1.layer.position.x, self.CATextView1.layer.position.y + 100)] ;
+    textAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.CATextView1.layer.position.x, self.CATextView1.layer.position.y)] ;
+//    textAnimation.removedOnCompletion = NO ;
+//    textAnimation.fillMode = kCAFillModeForwards ;
     [self.CATextView1.layer addAnimation:textAnimation forKey:nil] ;
     [self.CATextView1.layer addAnimation:imgOpa forKey:nil] ;
 }
@@ -278,12 +269,8 @@
     //scrollview 1 animation
     if(offset <= 637){
         self.CAImgView1.layer.speed = 0 ;
-//        CAAnimation * animTran = [self imgView1Tran] ;
-//        CAAnimation * animOpa = [self imgView1Opa] ;
-//        [self.CAImgView1.layer addAnimation:animTran forKey:nil] ;
-//        [self.CAImgView1.layer addAnimation:animOpa forKey:nil] ;
-        //        animTran.timeOffset = MAX(0, offset / 50) ;
-        //        animOpa.timeOffset = MAX(0, offset / 637) ;
+//        CAAnimation * anim = [self firstViewOpaAnim] ;
+//        [self.CAImgView1.layer addAnimation:anim forKey:nil] ;
         CAAnimation * anim = [self imgView1Group] ;
         [self.CAImgView1.layer addAnimation:anim forKey:nil] ;
         anim.timeOffset = MAX(0, offset / 637) ;
@@ -345,44 +332,45 @@
     [self.view layoutIfNeeded] ;
     CABasicAnimation * opa = [CABasicAnimation animation] ;
     opa.keyPath = @"opacity" ;
+//    opa.fromValue = [NSNumber numberWithFloat:1] ;
     opa.toValue = [NSNumber numberWithFloat:0] ;
-    opa.removedOnCompletion = NO ;
-    opa.fillMode = kCAFillModeForwards ;
+//    opa.removedOnCompletion = NO ;
+//    opa.fillMode = kCAFillModeForwards ;
     opa.duration = 1 ;
     CABasicAnimation * tran = [CABasicAnimation animation] ;
     tran.keyPath = @"position" ;
-    tran.removedOnCompletion = NO ;
-    tran.fillMode = kCAFillModeForwards ;
+//    tran.removedOnCompletion = NO ;
+//    tran.fillMode = kCAFillModeForwards ;
     tran.duration = 1 ;
     CGFloat xPos = self.CAImgView1.center.x ;
 //    NSLog(@"center : %@", NSStringFromCGPoint(CGPointMake(self.CAImgView1.center.x, self.CAImgView1.center.y))) ;
-    tran.fromValue = [NSValue valueWithCGPoint:CGPointMake(xPos, self.CAImgView1.center.y)] ;
+    tran.fromValue = [NSValue valueWithCGPoint:CGPointMake(xPos, self.view.center.y)] ;
     tran.toValue = [NSValue valueWithCGPoint:CGPointMake(xPos - 50, self.view.center.y)] ;
     CAAnimationGroup * group = [CAAnimationGroup animation] ;
     group.animations = @[tran, opa] ;
-    group.removedOnCompletion = NO ;
-    group.fillMode = kCAFillModeForwards ;
+//    group.removedOnCompletion = NO ;
+//    group.fillMode = kCAFillModeForwards ;
     group.duration = 1 ;
     return group ;
 }
-- (CAAnimation *)imgView1Tran{
-    CABasicAnimation * tran = [CABasicAnimation animation] ;
-    tran.keyPath = @"position" ;
-    tran.removedOnCompletion = NO ;
-    tran.fillMode = kCAFillModeForwards ;
-//    tran.speed = 0 ;
-    tran.duration = 1 ;
-    CGFloat xPos = self.CAImgView1.center.x ;
-    //    NSLog(@"center : %@", NSStringFromCGPoint(CGPointMake(self.CAImgView1.center.x, self.CAImgView1.center.y))) ;
-    tran.fromValue = [NSValue valueWithCGPoint:CGPointMake(xPos, self.CAImgView1.center.y)] ;
-    tran.toValue = [NSValue valueWithCGPoint:CGPointMake(xPos - 50, self.view.center.y)] ;
-    return tran ;
-}
+//- (CAAnimation *)imgView1Tran{
+//    CABasicAnimation * tran = [CABasicAnimation animation] ;
+//    tran.keyPath = @"position" ;
+//    tran.removedOnCompletion = NO ;
+//    tran.fillMode = kCAFillModeForwards ;
+////    tran.speed = 0 ;
+//    tran.duration = 1 ;
+//    CGFloat xPos = self.CAImgView1.center.x ;
+//    //    NSLog(@"center : %@", NSStringFromCGPoint(CGPointMake(self.CAImgView1.center.x, self.CAImgView1.center.y))) ;
+//    tran.fromValue = [NSValue valueWithCGPoint:CGPointMake(xPos, self.CAImgView1.center.y)] ;
+//    tran.toValue = [NSValue valueWithCGPoint:CGPointMake(xPos - 50, self.view.center.y)] ;
+//    return tran ;
+//}
 - (CAAnimation *)firstViewOpaAnim{
     CABasicAnimation * opa = [CABasicAnimation animation] ;
     opa.keyPath = @"opacity" ;
-    opa.fromValue = [NSNumber numberWithFloat: 1] ;
-    opa.toValue = [NSNumber numberWithFloat:0] ;
+//    opa.fromValue = [NSNumber numberWithFloat: 1] ;
+    opa.toValue = [NSNumber numberWithFloat: 0] ;
 //    opa.speed = 0 ;
     opa.duration = 1 ;
     opa.removedOnCompletion = NO ;
