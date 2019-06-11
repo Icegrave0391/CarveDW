@@ -39,9 +39,12 @@
     //set UI
     [self setUI] ;
     //initial animation
+//    [self loadAnimationStart] ;
+}
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews] ;
     [self loadAnimationStart] ;
 }
-
 - (void) setUI{
     //background
     _bgView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds] ;
@@ -231,16 +234,16 @@
     imgOpa.duration = 0.5f ;
     imgOpa.fillMode = kCAFillModeForwards ;
     imgOpa.removedOnCompletion = NO ;
-//    CAAnimationGroup * imgGroup = [CAAnimationGroup animation] ;
-//    imgGroup.animations = @[imgAnimation, imgOpa] ;
-//    imgGroup.duration = 0.5f ;
-//    imgGroup.removedOnCompletion = NO ;
-//    imgGroup.fillMode = kCAFillModeForwards ;
-//    imgGroup.delegate = self ;
-//    [self.CAImgView1.layer addAnimation:imgGroup forKey:@"img1 init group"] ;
-    imgAnimation.delegate = self ;
-    [self.CAImgView1.layer addAnimation:imgAnimation forKey:@"init pos"] ;
-    [self.CAImgView1.layer addAnimation:imgOpa forKey:@"init opa"] ;
+    CAAnimationGroup * imgGroup = [CAAnimationGroup animation] ;
+    imgGroup.animations = @[imgAnimation, imgOpa] ;
+    imgGroup.duration = 0.5f ;
+    imgGroup.removedOnCompletion = NO ;
+    imgGroup.fillMode = kCAFillModeForwards ;
+    imgGroup.delegate = self ;
+    [self.CAImgView1.layer addAnimation:imgGroup forKey:@"img1 init group"] ;
+//    imgAnimation.delegate = self ;
+//    [self.CAImgView1.layer addAnimation:imgAnimation forKey:@"init pos"] ;
+//    [self.CAImgView1.layer addAnimation:imgOpa forKey:@"init opa"] ;
     //title animation
     CABasicAnimation * titleAnimation = [CABasicAnimation animation] ;
     titleAnimation.keyPath = @"position" ;
@@ -270,18 +273,33 @@
 #pragma mark - scroll view delegate
 //while scroll
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"scroll point : %@",NSStringFromCGPoint(CGPointMake(self.CAImgView1.layer.position.x, self.CAImgView1.layer.position.y))) ;
+//    NSLog(@"scroll point : %@",NSStringFromCGPoint(CGPointMake(self.CAImgView1.layer.position.x, self.CAImgView1.layer.position.y))) ;
     CGFloat offset = scrollView.contentOffset.x ;
     //scrollview 1 animation
-    if(offset <= 50){
+    if(offset <= 637){
         self.CAImgView1.layer.speed = 0 ;
-        CAAnimation * animTran = [self imgView1Tran] ;
-        CAAnimation * animOpa = [self imgView1Opa] ;
-        [self.CAImgView1.layer addAnimation:animTran forKey:nil] ;
-        [self.CAImgView1.layer addAnimation:animOpa forKey:nil] ;
-        animTran.timeOffset = MAX(0, offset / 50) ;
-        animOpa.timeOffset = MAX(0, offset / 50) ;
-        self.CAImgView1.layer.timeOffset = MAX(0, offset / 50) ;
+//        CAAnimation * animTran = [self imgView1Tran] ;
+//        CAAnimation * animOpa = [self imgView1Opa] ;
+//        [self.CAImgView1.layer addAnimation:animTran forKey:nil] ;
+//        [self.CAImgView1.layer addAnimation:animOpa forKey:nil] ;
+        //        animTran.timeOffset = MAX(0, offset / 50) ;
+        //        animOpa.timeOffset = MAX(0, offset / 637) ;
+        CAAnimation * anim = [self imgView1Group] ;
+        [self.CAImgView1.layer addAnimation:anim forKey:nil] ;
+        anim.timeOffset = MAX(0, offset / 637) ;
+        self.CAImgView1.layer.timeOffset = MAX(0, offset / 637) ;
+        NSLog(@"layer off : %f \nanimation off: %f", self.CAImgView1.layer.timeOffset, anim.timeOffset) ;
+    }
+    if(offset <= kScreenWidth / 2){
+        self.CATitleView1.layer.speed = 0 ;
+        self.CATextView1.layer.speed = 0 ;
+        CAAnimation * opa = [self firstViewOpaAnim] ;
+        [self.CATitleView1.layer addAnimation:opa forKey:nil] ;
+        [self.CATextView1.layer addAnimation:opa forKey:nil] ;
+        opa.timeOffset = MAX(0, offset * 2 / kScreenWidth) ;
+        self.CATitleView1.layer.timeOffset = MAX(0, offset * 2 / kScreenWidth) ;
+        self.CATextView1.layer.timeOffset = MAX(0, offset * 2 / kScreenWidth) ;
+//        NSLog(@"layer off : %f \nanimation off: %f", self.CATitleView1.layer.timeOffset, opa.timeOffset) ;
     }
     if(offset <= kScreenWidth){
         self.CAImgView.layer.speed = 0 ;
@@ -323,33 +341,30 @@
     return _imgViewOpa ;
 }
 //first scrollview img1
-//- (CAAnimation *)imgView1Group{
-//    [self.view layoutIfNeeded] ;
-//    CABasicAnimation * opa = [CABasicAnimation animation] ;
-//    opa.keyPath = @"opacity" ;
-//    opa.toValue = 0 ;
-//    opa.removedOnCompletion = NO ;
-//    opa.fillMode = kCAFillModeForwards ;
-//    opa.speed = 0 ;
-//    opa.duration = 1 ;
-//    CABasicAnimation * tran = [CABasicAnimation animation] ;
-//    tran.keyPath = @"position" ;
-//    tran.removedOnCompletion = NO ;
-//    tran.fillMode = kCAFillModeForwards ;
-//    tran.speed = 0 ;
-//    tran.duration = 1 ;
-//    CGFloat xPos = self.CAImgView1.center.x ;
-////    NSLog(@"center : %@", NSStringFromCGPoint(CGPointMake(self.CAImgView1.center.x, self.CAImgView1.center.y))) ;
-//    tran.fromValue = [NSValue valueWithCGPoint:CGPointMake(xPos, self.CAImgView1.center.y)] ;
-//    tran.toValue = [NSValue valueWithCGPoint:CGPointMake(xPos - 50, self.view.center.y)] ;
-//    CAAnimationGroup * group = [CAAnimationGroup animation] ;
-//    group.animations = @[tran, opa] ;
-//    group.removedOnCompletion = NO ;
-//    group.fillMode = kCAFillModeForwards ;
-//    group.speed = 0 ;
-//    group.duration = 1 ;
-//    return group ;
-//}
+- (CAAnimation *)imgView1Group{
+    [self.view layoutIfNeeded] ;
+    CABasicAnimation * opa = [CABasicAnimation animation] ;
+    opa.keyPath = @"opacity" ;
+    opa.toValue = [NSNumber numberWithFloat:0] ;
+    opa.removedOnCompletion = NO ;
+    opa.fillMode = kCAFillModeForwards ;
+    opa.duration = 1 ;
+    CABasicAnimation * tran = [CABasicAnimation animation] ;
+    tran.keyPath = @"position" ;
+    tran.removedOnCompletion = NO ;
+    tran.fillMode = kCAFillModeForwards ;
+    tran.duration = 1 ;
+    CGFloat xPos = self.CAImgView1.center.x ;
+//    NSLog(@"center : %@", NSStringFromCGPoint(CGPointMake(self.CAImgView1.center.x, self.CAImgView1.center.y))) ;
+    tran.fromValue = [NSValue valueWithCGPoint:CGPointMake(xPos, self.CAImgView1.center.y)] ;
+    tran.toValue = [NSValue valueWithCGPoint:CGPointMake(xPos - 50, self.view.center.y)] ;
+    CAAnimationGroup * group = [CAAnimationGroup animation] ;
+    group.animations = @[tran, opa] ;
+    group.removedOnCompletion = NO ;
+    group.fillMode = kCAFillModeForwards ;
+    group.duration = 1 ;
+    return group ;
+}
 - (CAAnimation *)imgView1Tran{
     CABasicAnimation * tran = [CABasicAnimation animation] ;
     tran.keyPath = @"position" ;
@@ -363,10 +378,11 @@
     tran.toValue = [NSValue valueWithCGPoint:CGPointMake(xPos - 50, self.view.center.y)] ;
     return tran ;
 }
-- (CAAnimation *)imgView1Opa{
+- (CAAnimation *)firstViewOpaAnim{
     CABasicAnimation * opa = [CABasicAnimation animation] ;
     opa.keyPath = @"opacity" ;
-    opa.toValue = 0 ;
+    opa.fromValue = [NSNumber numberWithFloat: 1] ;
+    opa.toValue = [NSNumber numberWithFloat:0] ;
 //    opa.speed = 0 ;
     opa.duration = 1 ;
     opa.removedOnCompletion = NO ;
@@ -382,7 +398,9 @@
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    if (anim == [self.CAImgView1.layer animationForKey:@"init pos"]) {
+    if (anim == [self.CAImgView1.layer animationForKey:@"img1 init group"]) {
+//        [self.CAImgView1.layer removeAllAnimations] ;
+        self.CAImgView1.layer.opacity = 1 ;
         self.CAImgView1.layer.position = CGPointMake(self.CAImgView1.layer.position.x, self.view.center.y) ;
 //        self.CAImgView1.layer.opacity = 1 ;
         NSLog(@"nue : %@", NSStringFromCGPoint(CGPointMake(self.CAImgView1.layer.position.x, self.CAImgView1.layer.position.y))) ;

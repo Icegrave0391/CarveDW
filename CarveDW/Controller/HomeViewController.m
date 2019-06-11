@@ -135,7 +135,7 @@
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:true];
             //如果视图被移除，我们就自己添加上去
-            [[UIApplication sharedApplication].keyWindow insertSubview:fromView belowSubview:containerView];
+//            [[UIApplication sharedApplication].keyWindow insertSubview:fromView belowSubview:containerView];
         }];
     
 }
