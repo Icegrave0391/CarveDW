@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0113B4CA0CB5B9B35A62F787 /* libPods-CarveDW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E33B984E36B578A5CE39B459 /* libPods-CarveDW.a */; };
+		0830AD1F22B7D06E0076776F /* CraftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0830AD1E22B7D06E0076776F /* CraftViewController.m */; };
+		0830AD2422B7D7B80076776F /* CraftFirstPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0830AD2322B7D7B80076776F /* CraftFirstPage.m */; };
+		0830AD2722B7EF0E0076776F /* CraftPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0830AD2622B7EF0D0076776F /* CraftPageView.m */; };
+		0830AD4222B9E2A10076776F /* BundleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0830AD4122B9E2A10076776F /* BundleLoader.m */; };
+		0830AD4422B9E4340076776F /* resourceBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0830AD4322B9E4340076776F /* resourceBundle.bundle */; };
+		0830AD7222BA55A80076776F /* UIImage+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0830AD7122BA55A80076776F /* UIImage+Bundle.m */; };
 		08B2C17022A4114100B4DF5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C16F22A4114100B4DF5E /* AppDelegate.m */; };
 		08B2C17622A4114100B4DF5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17422A4114100B4DF5E /* Main.storyboard */; };
 		08B2C17822A4114300B4DF5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17722A4114300B4DF5E /* Assets.xcassets */; };
@@ -16,8 +22,6 @@
 		08B2C18822A4114300B4DF5E /* CarveDWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C18722A4114300B4DF5E /* CarveDWTests.m */; };
 		08B2C19322A4114300B4DF5E /* CarveDWUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C19222A4114300B4DF5E /* CarveDWUITests.m */; };
 		08B2C1A222A411FB00B4DF5E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C1A122A411FB00B4DF5E /* HomeViewController.m */; };
-		08B2C1A922A4B3D100B4DF5E /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B2C1A822A4B3D100B4DF5E /* RevealServer.framework */; };
-		08B2C1AA22A4B3D100B4DF5E /* RevealServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08B2C1A822A4B3D100B4DF5E /* RevealServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08B2C1AE22A4FBDB00B4DF5E /* OverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C1AD22A4FBDB00B4DF5E /* OverViewController.m */; };
 		08B2C1B222A5321600B4DF5E /* PushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C1B122A5321600B4DF5E /* PushTransition.m */; };
 /* End PBXBuildFile section */
@@ -39,21 +43,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		08B2C1AB22A4B3D100B4DF5E /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				08B2C1AA22A4B3D100B4DF5E /* RevealServer.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		0830AD1D22B7D06E0076776F /* CraftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CraftViewController.h; sourceTree = "<group>"; };
+		0830AD1E22B7D06E0076776F /* CraftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CraftViewController.m; sourceTree = "<group>"; };
+		0830AD2222B7D7B80076776F /* CraftFirstPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CraftFirstPage.h; sourceTree = "<group>"; };
+		0830AD2322B7D7B80076776F /* CraftFirstPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CraftFirstPage.m; sourceTree = "<group>"; };
+		0830AD2522B7EF0D0076776F /* CraftPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CraftPageView.h; sourceTree = "<group>"; };
+		0830AD2622B7EF0D0076776F /* CraftPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CraftPageView.m; sourceTree = "<group>"; };
+		0830AD2922B9D8690076776F /* a.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = a.bundle; path = ../Pods/a.bundle; sourceTree = "<group>"; };
+		0830AD4022B9E2A10076776F /* BundleLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleLoader.h; sourceTree = "<group>"; };
+		0830AD4122B9E2A10076776F /* BundleLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleLoader.m; sourceTree = "<group>"; };
+		0830AD4322B9E4340076776F /* resourceBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = resourceBundle.bundle; path = "../../../../Library/Developer/Xcode/DerivedData/resourceBundle-adyzbdbenkxzuncgxannxcevubqy/Build/Products/Debug-iphonesimulator/resourceBundle.bundle"; sourceTree = "<group>"; };
+		0830AD7022BA55A80076776F /* UIImage+Bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Bundle.h"; sourceTree = "<group>"; };
+		0830AD7122BA55A80076776F /* UIImage+Bundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Bundle.m"; sourceTree = "<group>"; };
 		08B2C16B22A4114100B4DF5E /* CarveDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarveDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B2C16E22A4114100B4DF5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		08B2C16F22A4114100B4DF5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -86,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08B2C1A922A4B3D100B4DF5E /* RevealServer.framework in Frameworks */,
 				0113B4CA0CB5B9B35A62F787 /* libPods-CarveDW.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +109,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0830AD2122B7D78B0076776F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0830AD2222B7D7B80076776F /* CraftFirstPage.h */,
+				0830AD2322B7D7B80076776F /* CraftFirstPage.m */,
+				0830AD2522B7EF0D0076776F /* CraftPageView.h */,
+				0830AD2622B7EF0D0076776F /* CraftPageView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		08B2C16222A4114100B4DF5E = {
 			isa = PBXGroup;
 			children = (
@@ -134,8 +146,11 @@
 		08B2C16D22A4114100B4DF5E /* CarveDW */ = {
 			isa = PBXGroup;
 			children = (
+				0830AD4322B9E4340076776F /* resourceBundle.bundle */,
+				0830AD2122B7D78B0076776F /* View */,
 				08B2C1AF22A531E900B4DF5E /* Utils */,
 				08B2C16E22A4114100B4DF5E /* AppDelegate.h */,
+				0830AD2922B9D8690076776F /* a.bundle */,
 				08B2C16F22A4114100B4DF5E /* AppDelegate.m */,
 				08B2C17422A4114100B4DF5E /* Main.storyboard */,
 				08B2C17722A4114300B4DF5E /* Assets.xcassets */,
@@ -172,6 +187,8 @@
 				08B2C1A122A411FB00B4DF5E /* HomeViewController.m */,
 				08B2C1AC22A4FBDA00B4DF5E /* OverViewController.h */,
 				08B2C1AD22A4FBDB00B4DF5E /* OverViewController.m */,
+				0830AD1D22B7D06E0076776F /* CraftViewController.h */,
+				0830AD1E22B7D06E0076776F /* CraftViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,8 +196,12 @@
 		08B2C1AF22A531E900B4DF5E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0830AD4022B9E2A10076776F /* BundleLoader.h */,
+				0830AD4122B9E2A10076776F /* BundleLoader.m */,
 				08B2C1B022A5321600B4DF5E /* PushTransition.h */,
 				08B2C1B122A5321600B4DF5E /* PushTransition.m */,
+				0830AD7022BA55A80076776F /* UIImage+Bundle.h */,
+				0830AD7122BA55A80076776F /* UIImage+Bundle.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -214,7 +235,6 @@
 				08B2C16722A4114100B4DF5E /* Sources */,
 				08B2C16822A4114100B4DF5E /* Frameworks */,
 				08B2C16922A4114100B4DF5E /* Resources */,
-				08B2C1AB22A4B3D100B4DF5E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,6 +331,7 @@
 				08B2C17B22A4114300B4DF5E /* LaunchScreen.storyboard in Resources */,
 				08B2C17822A4114300B4DF5E /* Assets.xcassets in Resources */,
 				08B2C17622A4114100B4DF5E /* Main.storyboard in Resources */,
+				0830AD4422B9E4340076776F /* resourceBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,8 +379,13 @@
 			files = (
 				08B2C17E22A4114300B4DF5E /* main.m in Sources */,
 				08B2C17022A4114100B4DF5E /* AppDelegate.m in Sources */,
+				0830AD2722B7EF0E0076776F /* CraftPageView.m in Sources */,
 				08B2C1AE22A4FBDB00B4DF5E /* OverViewController.m in Sources */,
+				0830AD1F22B7D06E0076776F /* CraftViewController.m in Sources */,
+				0830AD7222BA55A80076776F /* UIImage+Bundle.m in Sources */,
+				0830AD4222B9E2A10076776F /* BundleLoader.m in Sources */,
 				08B2C1B222A5321600B4DF5E /* PushTransition.m in Sources */,
+				0830AD2422B7D7B80076776F /* CraftFirstPage.m in Sources */,
 				08B2C1A222A411FB00B4DF5E /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,10 +565,13 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CarveDW/Info.plist;
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.icegrave0391.CarveDW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -561,6 +590,8 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CarveDW/Info.plist;
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "OverViewController.h"
+#import "CraftViewController.h"
 #import <Masonry.h>
 @interface HomeViewController ()<UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate>
 
@@ -92,9 +93,12 @@
         OverViewController * OverViewVC = [[OverViewController alloc] init] ;
         OverViewVC.transitioningDelegate = self ;
         [self presentViewController:OverViewVC animated:YES completion:nil] ;
+//        [self.navigationController pushViewController:OverViewVC animated:YES] ;
     }
     else if(sender.tag == 2){
-        
+        CraftViewController * CraftVC = [[CraftViewController alloc] init] ;
+        CraftVC.transitioningDelegate = self ;
+        [self presentViewController:CraftVC animated:YES completion:nil] ;
     }
     else if(sender.tag == 3){
         
