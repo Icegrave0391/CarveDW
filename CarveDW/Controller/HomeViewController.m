@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "OverViewController.h"
 #import "CraftViewController.h"
+#import "StoryViewController.h"
 #import <Masonry.h>
 @interface HomeViewController ()<UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate>
 
@@ -101,7 +102,9 @@
         [self presentViewController:CraftVC animated:YES completion:nil] ;
     }
     else if(sender.tag == 3){
-        
+        StoryViewController * storyVC = [[StoryViewController alloc] init] ;
+        storyVC.transitioningDelegate = self ;
+        [self presentViewController:storyVC animated:YES completion:nil] ;
     }
     else{
         

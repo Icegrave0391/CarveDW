@@ -42,6 +42,7 @@
             make.width.mas_equalTo(@444) ;
             make.height.mas_equalTo(@272) ;
         }];
+        self.overView.layer.speed = 0 ;
         //operateView
         _operateView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"craft_operateView"]] ;
         [self addSubview:_operateView] ;
@@ -51,19 +52,54 @@
             make.width.mas_equalTo(@372) ;
             make.height.mas_equalTo(@465) ;
         }];
-        self.timeOffset = 0 ;
+        self.operateView.layer.speed = 0 ;
+        _timeOffset = 0 ;
     }
     return self ;
 }
+- (void)setTimeOffset:(CGFloat)timeOffset{
+    _timeOffset = timeOffset ;
+    //set operate tran timeoffset
+//    CABasicAnimation * operateTran = [self.operateView.layer animationForKey:@"operateTran"] ;
+//    self.operateTran.timeOffset = timeOffset ;
+//    self.operateView.layer.timeOffset = timeOffset ;
+//    //set over tran timeoffset
+////    CAAnimation * overViewTran = [self.overView.layer animationForKey:@"overViewTran"] ;
+//    self.overViewTran.timeOffset = timeOffset ;
+//    self.overView.layer.timeOffset = timeOffset ;
+//    NSLog(@">>>>>>>>>>>>>>>>>> %f %f", self.operateView.layer.timeOffset, self.operateTran.timeOffset) ;
+}
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
-{
-    return [self superview]; // return nil;
-    // 此处返回nil也可以。返回nil就相当于当前的view不是最合适的view
+- (CAAnimation *)operateViewTranWithBeginPosition:(CGPoint)position{
+    CABasicAnimation * tran = [CABasicAnimation animation] ;
+    tran.keyPath = @"position" ;
+    CGFloat posY = self.operateView.layer.position.y ;
+    CGFloat dis = 250 + self.operateView.layer.frame.size.height ;
+//    tran.fromValue = [NSValue valueWithCGPoint:position] ;
+    tran.toValue = [NSValue valueWithCGPoint:CGPointMake(self.operateView.layer.position.x, posY - dis)] ;
+    tran.duration = 1 ;
+    return tran ;
 }
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    NSLog(@"??????????????") ;
-    [super touchesBegan:touches withEvent:event];
+
+- (CAAnimation *)overViewTranWithBeginPosition:(CGPoint)position{
+    CABasicAnimation * tran = [CABasicAnimation animation] ;
+    tran.keyPath = @"position" ;
+    CGFloat posY = self.overView.layer.position.y ;
+    CGFloat dis = 474 + self.overView.layer.frame.size.height ;
+    tran.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.overView.layer.position.x, posY)] ;
+    tran.toValue = [NSValue valueWithCGPoint:CGPointMake(self.overView.layer.position.x, posY - dis)] ;
+    tran.duration = 1 ;
+    return tran ;
 }
+//
+//- (void)setOperateTran:(CAAnimation *)operateTran{
+//    _operateTran = operateTran ;
+//    [self.operateView.layer addAnimation:_operateTran forKey:nil] ;
+//}
+//
+//- (void)setOverViewTran:(CAAnimation *)overViewTran{
+//    _overViewTran = overViewTran ;
+//    [self.overView.layer addAnimation:_overViewTran forKey:nil] ;
+//}
+
 @end

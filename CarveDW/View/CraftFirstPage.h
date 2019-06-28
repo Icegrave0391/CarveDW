@@ -15,7 +15,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)UIImageView * robbinBottom ;
 @property(nonatomic, strong)UIImageView * operateView ;
 @property(nonatomic, strong)UIImageView * overView ;
+
+//@property(nonatomic, strong)CAAnimation * operateTran ;
+//@property(nonatomic, strong)CAAnimation * overViewTran ;
 @property(nonatomic, assign)CGFloat timeOffset ;
+
+- (CAAnimation *)operateViewTranWithBeginPosition:(CGPoint)position ;
+- (CAAnimation *)overViewTranWithBeginPosition:(CGPoint)position ;
+
+//- (CGPoint)convertInitOperateViewPosition ;
+//- (CGPoint)convertInitOverViewPosition ;
 @end
 
 NS_ASSUME_NONNULL_END
