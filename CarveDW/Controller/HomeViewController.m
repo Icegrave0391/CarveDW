@@ -10,6 +10,7 @@
 #import "OverViewController.h"
 #import "CraftViewController.h"
 #import "StoryViewController.h"
+#import "CreatMenuViewController.h"
 #import <Masonry.h>
 @interface HomeViewController ()<UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate>
 
@@ -23,6 +24,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    NSArray *familyNames = [UIFont familyNames];
+//    for( NSString *familyName in familyNames )
+//    {
+//        NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
+//        for( NSString *fontName in fontNames )
+//        {
+//            printf( "\tFontName: %s \n", [fontName UTF8String] );
+//        }
+//    }
     self.isPresenting = YES ;
     //set UI
     [self setUI] ;
@@ -107,7 +117,9 @@
         [self presentViewController:storyVC animated:YES completion:nil] ;
     }
     else{
-        
+        CreatMenuViewController * menuVC = [[CreatMenuViewController alloc] init] ;
+        menuVC.transitioningDelegate = self ;
+        [self presentViewController:menuVC animated:YES completion:nil] ;
     }
 }
 

@@ -16,6 +16,12 @@
 		0830AD7222BA55A80076776F /* UIImage+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0830AD7122BA55A80076776F /* UIImage+Bundle.m */; };
 		0878647A22C6613600035CF0 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0878647922C6613600035CF0 /* StoryViewController.m */; };
 		0878648122C6624100035CF0 /* NSURL+VideoBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0878648022C6624100035CF0 /* NSURL+VideoBundle.m */; };
+		0878649022C741B100035CF0 /* StoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0878648F22C741B100035CF0 /* StoryView.m */; };
+		0878649322C8F27500035CF0 /* CreatMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0878649222C8F27500035CF0 /* CreatMenuViewController.m */; };
+		0878649E22C8F84A00035CF0 /* CreatCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0878649D22C8F84A00035CF0 /* CreatCardViewController.m */; };
+		087864A122C8FA2C00035CF0 /* CardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 087864A022C8FA2C00035CF0 /* CardButton.m */; };
+		087864A622CA4F9000035CF0 /* CardInitGenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 087864A522CA4F9000035CF0 /* CardInitGenderView.m */; };
+		087864B422CA5B7300035CF0 /* FZLTXIHJW.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 087864B322CA5B7300035CF0 /* FZLTXIHJW.TTF */; };
 		08B2C17022A4114100B4DF5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C16F22A4114100B4DF5E /* AppDelegate.m */; };
 		08B2C17622A4114100B4DF5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17422A4114100B4DF5E /* Main.storyboard */; };
 		08B2C17822A4114300B4DF5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17722A4114300B4DF5E /* Assets.xcassets */; };
@@ -61,6 +67,17 @@
 		0878647922C6613600035CF0 /* StoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
 		0878647F22C6624100035CF0 /* NSURL+VideoBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+VideoBundle.h"; sourceTree = "<group>"; };
 		0878648022C6624100035CF0 /* NSURL+VideoBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+VideoBundle.m"; sourceTree = "<group>"; };
+		0878648E22C741B100035CF0 /* StoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryView.h; sourceTree = "<group>"; };
+		0878648F22C741B100035CF0 /* StoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoryView.m; sourceTree = "<group>"; };
+		0878649122C8F27500035CF0 /* CreatMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreatMenuViewController.h; sourceTree = "<group>"; };
+		0878649222C8F27500035CF0 /* CreatMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreatMenuViewController.m; sourceTree = "<group>"; };
+		0878649C22C8F84A00035CF0 /* CreatCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreatCardViewController.h; sourceTree = "<group>"; };
+		0878649D22C8F84A00035CF0 /* CreatCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreatCardViewController.m; sourceTree = "<group>"; };
+		0878649F22C8FA2C00035CF0 /* CardButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardButton.h; sourceTree = "<group>"; };
+		087864A022C8FA2C00035CF0 /* CardButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardButton.m; sourceTree = "<group>"; };
+		087864A422CA4F9000035CF0 /* CardInitGenderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardInitGenderView.h; sourceTree = "<group>"; };
+		087864A522CA4F9000035CF0 /* CardInitGenderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardInitGenderView.m; sourceTree = "<group>"; };
+		087864B322CA5B7300035CF0 /* FZLTXIHJW.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZLTXIHJW.TTF; sourceTree = "<group>"; };
 		08B2C16B22A4114100B4DF5E /* CarveDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarveDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B2C16E22A4114100B4DF5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		08B2C16F22A4114100B4DF5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -121,6 +138,12 @@
 				0830AD2322B7D7B80076776F /* CraftFirstPage.m */,
 				0830AD2522B7EF0D0076776F /* CraftPageView.h */,
 				0830AD2622B7EF0D0076776F /* CraftPageView.m */,
+				0878648E22C741B100035CF0 /* StoryView.h */,
+				0878648F22C741B100035CF0 /* StoryView.m */,
+				0878649F22C8FA2C00035CF0 /* CardButton.h */,
+				087864A022C8FA2C00035CF0 /* CardButton.m */,
+				087864A422CA4F9000035CF0 /* CardInitGenderView.h */,
+				087864A522CA4F9000035CF0 /* CardInitGenderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +179,7 @@
 				08B2C17422A4114100B4DF5E /* Main.storyboard */,
 				08B2C17722A4114300B4DF5E /* Assets.xcassets */,
 				08B2C17C22A4114300B4DF5E /* Info.plist */,
+				087864B322CA5B7300035CF0 /* FZLTXIHJW.TTF */,
 				08B2C17D22A4114300B4DF5E /* main.m */,
 				08B2C17922A4114300B4DF5E /* LaunchScreen.storyboard */,
 				0830AD4322B9E4340076776F /* resourceBundle.bundle */,
@@ -195,6 +219,10 @@
 				0830AD1E22B7D06E0076776F /* CraftViewController.m */,
 				0878647822C6613600035CF0 /* StoryViewController.h */,
 				0878647922C6613600035CF0 /* StoryViewController.m */,
+				0878649122C8F27500035CF0 /* CreatMenuViewController.h */,
+				0878649222C8F27500035CF0 /* CreatMenuViewController.m */,
+				0878649C22C8F84A00035CF0 /* CreatCardViewController.h */,
+				0878649D22C8F84A00035CF0 /* CreatCardViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,6 +367,7 @@
 				08B2C17B22A4114300B4DF5E /* LaunchScreen.storyboard in Resources */,
 				08B2C17822A4114300B4DF5E /* Assets.xcassets in Resources */,
 				08B2C17622A4114100B4DF5E /* Main.storyboard in Resources */,
+				087864B422CA5B7300035CF0 /* FZLTXIHJW.TTF in Resources */,
 				0830AD4422B9E4340076776F /* resourceBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,14 +417,19 @@
 				0878647A22C6613600035CF0 /* StoryViewController.m in Sources */,
 				08B2C17E22A4114300B4DF5E /* main.m in Sources */,
 				0878648122C6624100035CF0 /* NSURL+VideoBundle.m in Sources */,
+				0878649322C8F27500035CF0 /* CreatMenuViewController.m in Sources */,
 				08B2C17022A4114100B4DF5E /* AppDelegate.m in Sources */,
+				0878649022C741B100035CF0 /* StoryView.m in Sources */,
 				0830AD2722B7EF0E0076776F /* CraftPageView.m in Sources */,
 				08B2C1AE22A4FBDB00B4DF5E /* OverViewController.m in Sources */,
 				0830AD1F22B7D06E0076776F /* CraftViewController.m in Sources */,
 				0830AD7222BA55A80076776F /* UIImage+Bundle.m in Sources */,
+				0878649E22C8F84A00035CF0 /* CreatCardViewController.m in Sources */,
 				0830AD4222B9E2A10076776F /* BundleLoader.m in Sources */,
 				08B2C1B222A5321600B4DF5E /* PushTransition.m in Sources */,
+				087864A122C8FA2C00035CF0 /* CardButton.m in Sources */,
 				0830AD2422B7D7B80076776F /* CraftFirstPage.m in Sources */,
+				087864A622CA4F9000035CF0 /* CardInitGenderView.m in Sources */,
 				08B2C1A222A411FB00B4DF5E /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
