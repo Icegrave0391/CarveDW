@@ -60,13 +60,13 @@
         imgView ;
     });
     self.femaleView = ({
-        UIImageView * imgView = [[UIImageView alloc] initWithImage:[UIImage getBundleImageName:@"genderFemale_notSel"]] ;
+        UIImageView * imgView = [[UIImageView alloc] initWithImage:[UIImage getBundleImageName:@"genderFamle_notSel"]] ;
         imgView.userInteractionEnabled = YES ;
         [self addSubview:imgView] ;
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(genderBtnClicked:)] ;
         [imgView addGestureRecognizer:tap] ;
         [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left) ;
+            make.right.equalTo(self.mas_right) ;
             make.top.equalTo(self.mas_top) ;
             make.width.mas_equalTo(@251) ;
             make.height.mas_equalTo(@273) ;
@@ -75,15 +75,16 @@
     });
 }
 
-- (void)genderBtnClicked:(UIImageView *)imgView{
-    if(imgView == self.maleView){
+- (void)genderBtnClicked:(UITapGestureRecognizer *)tap{
+//    NSLog(@"views : %@\n\n %@\n\n %@", imgView, self.maleView, self.femaleView) ;
+    if(tap.view == self.maleView){
         self.gender = GenderMale ;
         self.maleView.image = [UIImage getBundleImageName:@"genderMale_sel"] ;
         self.maleBgView.image = [UIImage getBundleImageName:@"gender_sel"] ;
-        self.femaleView.image = [UIImage getBundleImageName:@"genderFemale_notSel"] ;
+        self.femaleView.image = [UIImage getBundleImageName:@"genderFamle_notSel"] ;
         self.femaleBgView.image = [UIImage getBundleImageName:@"gender_notSel"] ;
     }
-    else{
+    if(tap.view == self.femaleView){
         self.gender = GenderFemale ;
         self.maleView.image = [UIImage getBundleImageName:@"genderMale_notSel"] ;
         self.maleBgView.image = [UIImage getBundleImageName:@"gender_notSel"] ;

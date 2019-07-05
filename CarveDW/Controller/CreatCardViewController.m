@@ -63,7 +63,7 @@
     //init card view
     self.genderLabel = ({
         UILabel * label = [[UILabel alloc] init] ;
-        label.font = [UIFont fontWithName:@"FZLTXIHJW--GB1-0" size:82] ;
+        label.font = [UIFont fontWithName:@"FZLTXIHJW--GB1-0" size:42] ;
         label.textColor = [UIColor colorWithRed:131.0/255 green:24.0/255 blue:9.0/255 alpha:1] ;
         label.text = @"您的性别" ;
         label.textAlignment = NSTextAlignmentCenter ;
@@ -89,7 +89,7 @@
     });
     self.nameLabel = ({
         UILabel * label = [[UILabel alloc] init] ;
-        label.font = [UIFont fontWithName:@"FZLTXIHJW--GB1-0" size:82] ;
+        label.font = [UIFont fontWithName:@"FZLTXIHJW--GB1-0" size:42] ;
         label.textColor = [UIColor colorWithRed:131.0/255 green:24.0/255 blue:9.0/255 alpha:1] ;
         label.text = @"您的姓名" ;
         label.textAlignment = NSTextAlignmentCenter ;
@@ -103,9 +103,55 @@
         label ;
     });
 //    self
+    self.nameTextField = ({
+        UITextField * textField = [[UITextField alloc] init] ;
+        textField.font = [UIFont fontWithName:@"FZLTXIHJW--GB1-0" size:42] ;
+        textField.placeholder = @"四个字以内" ;
+        [textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged] ;
+        [self.view addSubview:textField] ;
+        [textField mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(@525) ;
+            make.height.mas_equalTo(@87) ;
+            make.centerX.equalTo(self.view.mas_centerX) ;
+            make.top.equalTo(self.genderSelView.mas_bottom).with.offset(49) ;
+        }];
+        textField ;
+    });
+    self.generateButton = ({
+        UIButton * button = [[UIButton alloc] init] ;
+        button.titleLabel.font = [UIFont fontWithName:@"FZLTXIHJW--GB1-0" size:42] ;
+        [button setTitle:@"点击生成" forState:UIControlStateNormal] ;
+        button.titleLabel.textColor =[UIColor colorWithRed:131.0/255 green:24.0/255 blue:9.0/255 alpha:1] ;
+        button ;
+    });
 }
 
-
+#pragma mark - textfield
+- (void)textFieldDidChange:(UITextField *)textField{
+    NSString *toBeString = textField.text;
+    const NSInteger MAX_STARWORDS_LENGTH = 4 ;
+    //获取高亮部分
+    UITextRange *selectedRange = [textField markedTextRange];
+    UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
+    
+    // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
+    if (!position)
+    {
+        if (toBeString.length > MAX_STARWORDS_LENGTH)
+        {
+            NSRange rangeIndex = [toBeString rangeOfComposedCharacterSequenceAtIndex:MAX_STARWORDS_LENGTH];
+            if (rangeIndex.length == 1)
+            {
+                textField.text = [toBeString substringToIndex:MAX_STARWORDS_LENGTH];
+            }
+            else
+            {
+                NSRange rangeRange = [toBeString rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, MAX_STARWORDS_LENGTH)];
+                textField.text = [toBeString substringWithRange:rangeRange];
+            }
+        }
+    }
+}
 
 - (instancetype)init{
     self = [super init] ;

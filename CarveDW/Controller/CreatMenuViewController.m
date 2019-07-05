@@ -63,7 +63,8 @@
 
 - (void)buttonClicked:(UIButton *)sender{
     if (sender.tag == 2) {
-//        CreatCardViewController * cardVC = [CreatCardViewController ]
+        CreatCardViewController * cardVC = [[CreatCardViewController alloc] init] ;
+        [self presentViewController:cardVC animated:YES completion:nil] ;
     }
 }
 
