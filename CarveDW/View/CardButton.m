@@ -32,7 +32,7 @@
 - (void)setIsSelected:(BOOL)isSelected{
     _isSelected = isSelected ;
     if(isSelected){
-        if(self.tag == 1){
+        if(self.flag == 1){
             self.image = [UIImage imageNamed:@"card_cardSel"] ;
         }
         else{
@@ -40,7 +40,7 @@
         }
     }
     else{
-        if(self.tag == 1){
+        if(self.flag == 1){
             self.image = [UIImage imageNamed:@"card_card"] ;
         }
         else{

@@ -22,6 +22,7 @@
 		087864A122C8FA2C00035CF0 /* CardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 087864A022C8FA2C00035CF0 /* CardButton.m */; };
 		087864A622CA4F9000035CF0 /* CardInitGenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 087864A522CA4F9000035CF0 /* CardInitGenderView.m */; };
 		087864B422CA5B7300035CF0 /* FZLTXIHJW.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 087864B322CA5B7300035CF0 /* FZLTXIHJW.TTF */; };
+		0883C9B722D0F15A00E7CA8A /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0883C9B622D0F15A00E7CA8A /* CardView.m */; };
 		08B2C17022A4114100B4DF5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C16F22A4114100B4DF5E /* AppDelegate.m */; };
 		08B2C17622A4114100B4DF5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17422A4114100B4DF5E /* Main.storyboard */; };
 		08B2C17822A4114300B4DF5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17722A4114300B4DF5E /* Assets.xcassets */; };
@@ -78,6 +79,8 @@
 		087864A422CA4F9000035CF0 /* CardInitGenderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardInitGenderView.h; sourceTree = "<group>"; };
 		087864A522CA4F9000035CF0 /* CardInitGenderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardInitGenderView.m; sourceTree = "<group>"; };
 		087864B322CA5B7300035CF0 /* FZLTXIHJW.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZLTXIHJW.TTF; sourceTree = "<group>"; };
+		0883C9B522D0F15A00E7CA8A /* CardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		0883C9B622D0F15A00E7CA8A /* CardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		08B2C16B22A4114100B4DF5E /* CarveDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarveDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B2C16E22A4114100B4DF5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		08B2C16F22A4114100B4DF5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				087864A022C8FA2C00035CF0 /* CardButton.m */,
 				087864A422CA4F9000035CF0 /* CardInitGenderView.h */,
 				087864A522CA4F9000035CF0 /* CardInitGenderView.m */,
+				0883C9B522D0F15A00E7CA8A /* CardView.h */,
+				0883C9B622D0F15A00E7CA8A /* CardView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				0878649322C8F27500035CF0 /* CreatMenuViewController.m in Sources */,
 				08B2C17022A4114100B4DF5E /* AppDelegate.m in Sources */,
 				0878649022C741B100035CF0 /* StoryView.m in Sources */,
+				0883C9B722D0F15A00E7CA8A /* CardView.m in Sources */,
 				0830AD2722B7EF0E0076776F /* CraftPageView.m in Sources */,
 				08B2C1AE22A4FBDB00B4DF5E /* OverViewController.m in Sources */,
 				0830AD1F22B7D06E0076776F /* CraftViewController.m in Sources */,
