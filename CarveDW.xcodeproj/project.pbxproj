@@ -12,8 +12,10 @@
 		0830AD2422B7D7B80076776F /* CraftFirstPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0830AD2322B7D7B80076776F /* CraftFirstPage.m */; };
 		0830AD2722B7EF0E0076776F /* CraftPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0830AD2622B7EF0D0076776F /* CraftPageView.m */; };
 		0830AD4222B9E2A10076776F /* BundleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0830AD4122B9E2A10076776F /* BundleLoader.m */; };
-		0830AD4422B9E4340076776F /* resourceBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0830AD4322B9E4340076776F /* resourceBundle.bundle */; };
 		0830AD7222BA55A80076776F /* UIImage+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0830AD7122BA55A80076776F /* UIImage+Bundle.m */; };
+		085EC05A22F5913000B827FE /* MovieCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 085EC05922F5913000B827FE /* MovieCardView.m */; };
+		085EC11522F6BA9200B827FE /* MovieCanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 085EC11422F6BA9200B827FE /* MovieCanvasViewController.m */; };
+		085EC12222F6D11000B827FE /* MovieSideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 085EC12122F6D11000B827FE /* MovieSideView.m */; };
 		0878647A22C6613600035CF0 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0878647922C6613600035CF0 /* StoryViewController.m */; };
 		0878648122C6624100035CF0 /* NSURL+VideoBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0878648022C6624100035CF0 /* NSURL+VideoBundle.m */; };
 		0878649022C741B100035CF0 /* StoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0878648F22C741B100035CF0 /* StoryView.m */; };
@@ -23,6 +25,10 @@
 		087864A622CA4F9000035CF0 /* CardInitGenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 087864A522CA4F9000035CF0 /* CardInitGenderView.m */; };
 		087864B422CA5B7300035CF0 /* FZLTXIHJW.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 087864B322CA5B7300035CF0 /* FZLTXIHJW.TTF */; };
 		0883C9B722D0F15A00E7CA8A /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0883C9B622D0F15A00E7CA8A /* CardView.m */; };
+		088F9F7C22FAF5BD0022233A /* NSData+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 088F9F7B22FAF5BD0022233A /* NSData+Bundle.m */; };
+		088F9F8422FAF9CC0022233A /* resourceBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 088F9F8322FAF9CB0022233A /* resourceBundle.bundle */; };
+		089671D322F85B8800B5F2AB /* MovieCardLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 089671D222F85B8800B5F2AB /* MovieCardLabel.m */; };
+		08A13A1D22FFAAE800558D75 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A13A1C22FFAAE800558D75 /* libmp3lame.a */; };
 		08B2C17022A4114100B4DF5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C16F22A4114100B4DF5E /* AppDelegate.m */; };
 		08B2C17622A4114100B4DF5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17422A4114100B4DF5E /* Main.storyboard */; };
 		08B2C17822A4114300B4DF5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08B2C17722A4114300B4DF5E /* Assets.xcassets */; };
@@ -33,6 +39,8 @@
 		08B2C1A222A411FB00B4DF5E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C1A122A411FB00B4DF5E /* HomeViewController.m */; };
 		08B2C1AE22A4FBDB00B4DF5E /* OverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C1AD22A4FBDB00B4DF5E /* OverViewController.m */; };
 		08B2C1B222A5321600B4DF5E /* PushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C1B122A5321600B4DF5E /* PushTransition.m */; };
+		08EBC89222F3126D0013A797 /* CreatMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EBC89122F3126D0013A797 /* CreatMovieViewController.m */; };
+		08EBC89522F313D70013A797 /* MovieCategoryLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EBC89422F313D70013A797 /* MovieCategoryLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +69,14 @@
 		0830AD2622B7EF0D0076776F /* CraftPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CraftPageView.m; sourceTree = "<group>"; };
 		0830AD4022B9E2A10076776F /* BundleLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleLoader.h; sourceTree = "<group>"; };
 		0830AD4122B9E2A10076776F /* BundleLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleLoader.m; sourceTree = "<group>"; };
-		0830AD4322B9E4340076776F /* resourceBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = resourceBundle.bundle; path = "../../../../Library/Developer/Xcode/DerivedData/resourceBundle-adyzbdbenkxzuncgxannxcevubqy/Build/Products/Debug-iphonesimulator/resourceBundle.bundle"; sourceTree = "<group>"; };
 		0830AD7022BA55A80076776F /* UIImage+Bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Bundle.h"; sourceTree = "<group>"; };
 		0830AD7122BA55A80076776F /* UIImage+Bundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Bundle.m"; sourceTree = "<group>"; };
+		085EC05822F5913000B827FE /* MovieCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCardView.h; sourceTree = "<group>"; };
+		085EC05922F5913000B827FE /* MovieCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCardView.m; sourceTree = "<group>"; };
+		085EC11322F6BA9200B827FE /* MovieCanvasViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCanvasViewController.h; sourceTree = "<group>"; };
+		085EC11422F6BA9200B827FE /* MovieCanvasViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCanvasViewController.m; sourceTree = "<group>"; };
+		085EC12022F6D11000B827FE /* MovieSideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieSideView.h; sourceTree = "<group>"; };
+		085EC12122F6D11000B827FE /* MovieSideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieSideView.m; sourceTree = "<group>"; };
 		0878647822C6613600035CF0 /* StoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
 		0878647922C6613600035CF0 /* StoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
 		0878647F22C6624100035CF0 /* NSURL+VideoBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+VideoBundle.h"; sourceTree = "<group>"; };
@@ -81,6 +94,13 @@
 		087864B322CA5B7300035CF0 /* FZLTXIHJW.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZLTXIHJW.TTF; sourceTree = "<group>"; };
 		0883C9B522D0F15A00E7CA8A /* CardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		0883C9B622D0F15A00E7CA8A /* CardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		088F9F7A22FAF5BD0022233A /* NSData+Bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Bundle.h"; sourceTree = "<group>"; };
+		088F9F7B22FAF5BD0022233A /* NSData+Bundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Bundle.m"; sourceTree = "<group>"; };
+		088F9F8322FAF9CB0022233A /* resourceBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = resourceBundle.bundle; path = "../../../../Library/Developer/Xcode/DerivedData/resourceBundle-epaceiddbpwdnagojiymjgeirkkv/Build/Products/Debug/resourceBundle.bundle"; sourceTree = "<group>"; };
+		089671D122F85B8800B5F2AB /* MovieCardLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCardLabel.h; sourceTree = "<group>"; };
+		089671D222F85B8800B5F2AB /* MovieCardLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCardLabel.m; sourceTree = "<group>"; };
+		08A13A1B22FFAAE100558D75 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		08A13A1C22FFAAE800558D75 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		08B2C16B22A4114100B4DF5E /* CarveDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarveDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B2C16E22A4114100B4DF5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		08B2C16F22A4114100B4DF5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,11 +118,14 @@
 		08B2C1A022A411FB00B4DF5E /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		08B2C1A122A411FB00B4DF5E /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		08B2C1A622A4B3A600B4DF5E /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "../../../../../Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/RevealServer.framework"; sourceTree = "<group>"; };
-		08B2C1A822A4B3D100B4DF5E /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		08B2C1AC22A4FBDA00B4DF5E /* OverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverViewController.h; sourceTree = "<group>"; };
 		08B2C1AD22A4FBDB00B4DF5E /* OverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverViewController.m; sourceTree = "<group>"; };
 		08B2C1B022A5321600B4DF5E /* PushTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushTransition.h; sourceTree = "<group>"; };
 		08B2C1B122A5321600B4DF5E /* PushTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushTransition.m; sourceTree = "<group>"; };
+		08EBC89022F3126D0013A797 /* CreatMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreatMovieViewController.h; sourceTree = "<group>"; };
+		08EBC89122F3126D0013A797 /* CreatMovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreatMovieViewController.m; sourceTree = "<group>"; };
+		08EBC89322F313D70013A797 /* MovieCategoryLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCategoryLabel.h; sourceTree = "<group>"; };
+		08EBC89422F313D70013A797 /* MovieCategoryLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCategoryLabel.m; sourceTree = "<group>"; };
 		390CE5BAC1DC61A1824D8457 /* Pods-CarveDW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarveDW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarveDW/Pods-CarveDW.debug.xcconfig"; sourceTree = "<group>"; };
 		6D447A4ED01017731F47A526 /* Pods-CarveDW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarveDW.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarveDW/Pods-CarveDW.release.xcconfig"; sourceTree = "<group>"; };
 		E33B984E36B578A5CE39B459 /* libPods-CarveDW.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CarveDW.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0113B4CA0CB5B9B35A62F787 /* libPods-CarveDW.a in Frameworks */,
+				08A13A1D22FFAAE800558D75 /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +173,14 @@
 				087864A522CA4F9000035CF0 /* CardInitGenderView.m */,
 				0883C9B522D0F15A00E7CA8A /* CardView.h */,
 				0883C9B622D0F15A00E7CA8A /* CardView.m */,
+				08EBC89322F313D70013A797 /* MovieCategoryLabel.h */,
+				08EBC89422F313D70013A797 /* MovieCategoryLabel.m */,
+				085EC05822F5913000B827FE /* MovieCardView.h */,
+				085EC05922F5913000B827FE /* MovieCardView.m */,
+				085EC12022F6D11000B827FE /* MovieSideView.h */,
+				085EC12122F6D11000B827FE /* MovieSideView.m */,
+				089671D122F85B8800B5F2AB /* MovieCardLabel.h */,
+				089671D222F85B8800B5F2AB /* MovieCardLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,7 +188,6 @@
 		08B2C16222A4114100B4DF5E = {
 			isa = PBXGroup;
 			children = (
-				08B2C1A822A4B3D100B4DF5E /* RevealServer.framework */,
 				08B2C16D22A4114100B4DF5E /* CarveDW */,
 				08B2C18622A4114300B4DF5E /* CarveDWTests */,
 				08B2C19122A4114300B4DF5E /* CarveDWUITests */,
@@ -186,8 +217,8 @@
 				08B2C17C22A4114300B4DF5E /* Info.plist */,
 				087864B322CA5B7300035CF0 /* FZLTXIHJW.TTF */,
 				08B2C17D22A4114300B4DF5E /* main.m */,
+				088F9F8322FAF9CB0022233A /* resourceBundle.bundle */,
 				08B2C17922A4114300B4DF5E /* LaunchScreen.storyboard */,
-				0830AD4322B9E4340076776F /* resourceBundle.bundle */,
 				0830AD2122B7D78B0076776F /* View */,
 				08B2C1AF22A531E900B4DF5E /* Utils */,
 				08B2C1A422A4A8B100B4DF5E /* Controller */,
@@ -228,6 +259,10 @@
 				0878649222C8F27500035CF0 /* CreatMenuViewController.m */,
 				0878649C22C8F84A00035CF0 /* CreatCardViewController.h */,
 				0878649D22C8F84A00035CF0 /* CreatCardViewController.m */,
+				08EBC89022F3126D0013A797 /* CreatMovieViewController.h */,
+				08EBC89122F3126D0013A797 /* CreatMovieViewController.m */,
+				085EC11322F6BA9200B827FE /* MovieCanvasViewController.h */,
+				085EC11422F6BA9200B827FE /* MovieCanvasViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,8 +276,12 @@
 				08B2C1B122A5321600B4DF5E /* PushTransition.m */,
 				0830AD7022BA55A80076776F /* UIImage+Bundle.h */,
 				0830AD7122BA55A80076776F /* UIImage+Bundle.m */,
+				088F9F7A22FAF5BD0022233A /* NSData+Bundle.h */,
+				088F9F7B22FAF5BD0022233A /* NSData+Bundle.m */,
 				0878647F22C6624100035CF0 /* NSURL+VideoBundle.h */,
 				0878648022C6624100035CF0 /* NSURL+VideoBundle.m */,
+				08A13A1B22FFAAE100558D75 /* lame.h */,
+				08A13A1C22FFAAE800558D75 /* libmp3lame.a */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -372,8 +411,8 @@
 				08B2C17B22A4114300B4DF5E /* LaunchScreen.storyboard in Resources */,
 				08B2C17822A4114300B4DF5E /* Assets.xcassets in Resources */,
 				08B2C17622A4114100B4DF5E /* Main.storyboard in Resources */,
+				088F9F8422FAF9CC0022233A /* resourceBundle.bundle in Resources */,
 				087864B422CA5B7300035CF0 /* FZLTXIHJW.TTF in Resources */,
-				0830AD4422B9E4340076776F /* resourceBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,21 +459,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				0878647A22C6613600035CF0 /* StoryViewController.m in Sources */,
+				085EC12222F6D11000B827FE /* MovieSideView.m in Sources */,
+				08EBC89522F313D70013A797 /* MovieCategoryLabel.m in Sources */,
 				08B2C17E22A4114300B4DF5E /* main.m in Sources */,
+				085EC11522F6BA9200B827FE /* MovieCanvasViewController.m in Sources */,
 				0878648122C6624100035CF0 /* NSURL+VideoBundle.m in Sources */,
 				0878649322C8F27500035CF0 /* CreatMenuViewController.m in Sources */,
 				08B2C17022A4114100B4DF5E /* AppDelegate.m in Sources */,
 				0878649022C741B100035CF0 /* StoryView.m in Sources */,
 				0883C9B722D0F15A00E7CA8A /* CardView.m in Sources */,
+				08EBC89222F3126D0013A797 /* CreatMovieViewController.m in Sources */,
 				0830AD2722B7EF0E0076776F /* CraftPageView.m in Sources */,
 				08B2C1AE22A4FBDB00B4DF5E /* OverViewController.m in Sources */,
 				0830AD1F22B7D06E0076776F /* CraftViewController.m in Sources */,
 				0830AD7222BA55A80076776F /* UIImage+Bundle.m in Sources */,
+				088F9F7C22FAF5BD0022233A /* NSData+Bundle.m in Sources */,
+				085EC05A22F5913000B827FE /* MovieCardView.m in Sources */,
 				0878649E22C8F84A00035CF0 /* CreatCardViewController.m in Sources */,
 				0830AD4222B9E2A10076776F /* BundleLoader.m in Sources */,
 				08B2C1B222A5321600B4DF5E /* PushTransition.m in Sources */,
 				087864A122C8FA2C00035CF0 /* CardButton.m in Sources */,
 				0830AD2422B7D7B80076776F /* CraftFirstPage.m in Sources */,
+				089671D322F85B8800B5F2AB /* MovieCardLabel.m in Sources */,
 				087864A622CA4F9000035CF0 /* CardInitGenderView.m in Sources */,
 				08B2C1A222A411FB00B4DF5E /* HomeViewController.m in Sources */,
 			);
@@ -608,22 +654,30 @@
 			baseConfigurationReference = 390CE5BAC1DC61A1824D8457 /* Pods-CarveDW.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Q64PWL267Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CarveDW/Info.plist;
-				INSTALL_PATH = "";
+				INSTALL_PATH = /Applications;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CarveDW/Utils",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.icegrave0391.CarveDW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = CarveDW;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -633,21 +687,29 @@
 			baseConfigurationReference = 6D447A4ED01017731F47A526 /* Pods-CarveDW.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Q64PWL267Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CarveDW/Info.plist;
-				INSTALL_PATH = "";
+				INSTALL_PATH = /Applications;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CarveDW/Utils",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.icegrave0391.CarveDW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = CarveDW;
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

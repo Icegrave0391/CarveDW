@@ -84,9 +84,16 @@
     self.overViewInitPos = self.beginPage.overView.layer.position ;
 //    self.beginPage.operateTran = [self.beginPage operateViewTranWithBeginPosition:self.operateViewInitPos] ;
 //    self.beginPage.overViewTran = [self.beginPage overViewTranWithBeginPosition:self.overViewInitPos] ;
+    
+    // init transform
+    self.pageArr[2].page3ImgView1.transform = CGAffineTransformMakeTranslation(0, 200);
+    self.pageArr[2].page3ImgView2.transform = CGAffineTransformMakeTranslation(0, 200);
 }
 
+
+
 #pragma mark - scrollview delegate
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat offset = scrollView.contentOffset.y ;
     CGFloat beginPageBeginOffset = 300 - 47 - self.beginPage.robbinBottom.frame.size.height ;
@@ -128,13 +135,20 @@
             self.pageArr[1].timeOffset = 1 ;
         }
     }
-//    CGPoint point = [scrollView.panGestureRecognizer translationInView:self.view];
-//    if (point.y > 0){
-//        self.pageArr[1].timeOffset = 0 ;
-//        if (offset == 2 * kScreenHeight) {
-//            self.pageArr[1].timeOffset = 1 ;
-//        }
-//    }
+    //page3
+    if(3 * kScreenHeight - 50 <= offset && offset <= 3 * kScreenHeight){
+        self.pageArr[2].timeOffset = (offset + 50 - 3 * kScreenHeight) / (50);
+        NSLog(@"%@", [NSString stringWithFormat:@"off : %f", self.pageArr[2].timeOffset]);
+    }
+    if(3 * kScreenHeight < offset && offset < 3 * kScreenHeight + 200){
+        self.pageArr[2].page3LabelOffset = (offset - 3 * kScreenHeight) / 200;
+    }
+    //page4
+    if(4 * kScreenHeight <= offset && offset <= 4 * kScreenHeight + 200){
+        CGPoint center = self.pageArr[3].TopImgView.center;
+        center.y = self.pageArr[3].page4TopInitPos.y + offset - kScreenHeight * 4;
+        self.pageArr[3].TopImgView.center = center;
+    }
 }
 
 - (void)navigationReturn{

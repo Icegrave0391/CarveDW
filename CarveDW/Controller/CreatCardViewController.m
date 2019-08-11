@@ -11,6 +11,7 @@
 #import <Masonry.h>
 #import "CardInitGenderView.h"
 #import "CardView.h"
+#import <Photos/Photos.h>
 // FZLTXIHJW--GB1-0
 @interface CreatCardViewController ()
 @property(nonatomic, strong)NSArray <CardButton *> * buttonArr ;
@@ -22,14 +23,21 @@
 @property(nonatomic, strong)UIButton * generateButton ;
 //card
 @property(nonatomic, strong)CardView * cardView ;
+@property(nonatomic, strong)UIButton * refreshButton ;
+@property(nonatomic, strong)UIButton * changeFrameButton ;
+//moji
+@property(nonatomic, strong)UIScrollView * mojiScrollView ;
+//save
+@property(nonatomic, strong)UIButton * saveBtn;
 @end
 
 @implementation CreatCardViewController
-
-
+const float mojiWidth = 308.0 ;
+const float mojiSpacing = 55.0 ;
 - (void)viewDidLoad {
     [super viewDidLoad];
     //UI
+    self.isInitial = YES ;
     [self setUpUI] ;
 }
 
@@ -64,6 +72,7 @@
         make.height.mas_equalTo(@44) ;
         make.width.mas_equalTo(@122) ;
     }];
+    self.buttonArr[0].isSelected = YES;
     [self.buttonArr[1] mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(retBtn.mas_centerY) ;
         make.left.equalTo(self.view.mas_centerX).with.offset(50) ;
@@ -152,6 +161,66 @@
         [button addTarget:self action:@selector(generateCard) forControlEvents:UIControlEventTouchUpInside] ;
         button ;
     });
+    self.refreshButton = ({
+        UIButton * button = [[UIButton alloc] init] ;
+        [button setImage:[UIImage imageNamed:@"refresh"] forState:UIControlStateNormal] ;
+        [self.view addSubview:button] ;
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(@44) ;
+            make.top.equalTo(self.view.mas_top).with.offset(40) ;
+            make.right.equalTo(self.view.mas_right).with.offset(-68) ;
+        }];
+        [button addTarget:self action:@selector(refreshCardView) forControlEvents:UIControlEventTouchUpInside] ;
+        button.hidden = YES ;
+        button ;
+    });
+    self.changeFrameButton = ({
+        UIButton * button = [[UIButton alloc] init] ;
+        [button setImage:[UIImage imageNamed:@"changeFrame"] forState:UIControlStateNormal] ;
+        [self.view addSubview:button] ;
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(@44) ;
+            make.top.equalTo(self.view.mas_top).with.offset(40) ;
+            make.right.equalTo(self.refreshButton.mas_left).with.offset(-18) ;
+        }];
+        [button addTarget:self action:@selector(changeFrame) forControlEvents:UIControlEventTouchUpInside] ;
+        button.hidden = YES;
+        button ;
+    });
+    self.mojiScrollView = ({
+        UIScrollView * scrollView = [[UIScrollView alloc] init] ;
+        scrollView.contentSize = CGSizeMake(4 * mojiWidth + 4 * mojiSpacing, mojiWidth) ;
+        scrollView.contentOffset = CGPointMake(0, 0) ;
+        scrollView.showsVerticalScrollIndicator = NO ;
+        scrollView.showsHorizontalScrollIndicator = NO ;
+        [self.view addSubview:scrollView] ;
+        [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view.mas_left) ;
+            make.centerY.equalTo(self.view.mas_centerY) ;
+            make.width.mas_equalTo(self.view.frame.size.width) ;
+            make.height.mas_equalTo(mojiWidth) ;
+        }];
+        for(int i = 0 ; i < 4 ; i++){
+            UIImageView * imgView = [[UIImageView alloc] initWithFrame:CGRectMake(mojiSpacing * (i+1) + mojiWidth * i, 0, mojiWidth, mojiWidth)] ;
+            imgView.image = [UIImage getBundleImageName:[NSString stringWithFormat:@"moji_%d", i+1]];
+            [scrollView addSubview:imgView] ;
+        }
+        scrollView.hidden = YES ;
+        scrollView ;
+    });
+    self.saveBtn = ({
+        UIButton * btn = [[UIButton alloc] init];
+        btn.hidden = YES;
+        [self.view addSubview:btn];
+        [btn setImage:[UIImage getBundleImageName:@"save_btn"] forState:UIControlStateNormal];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view.mas_bottom).with.offset(-40);
+            make.centerX.equalTo(self.view.mas_centerX);
+            make.height.width.mas_equalTo(btn.currentImage.size.width / 4);
+        }];
+        [btn addTarget:self action:@selector(save) forControlEvents:UIControlEventTouchUpInside];
+        btn;
+    });
 }
 
 #pragma mark - textfield
@@ -210,39 +279,101 @@
 
 - (void)generateCard{
     //set hide
-    self.nameTextField.hidden = YES ;
-    self.genderLabel.hidden = YES ;
-    self.genderSelView.hidden = YES ;
-    self.nameLabel.hidden = YES ;
-    self.generateButton.hidden = YES ;
-    
-    self.cardView = [[CardView alloc] initWithName:self.nameTextField.text andNumber:1] ;
-    [self.view addSubview:self.cardView] ;
-    [self.cardView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view.mas_centerX) ;
-        make.centerY.equalTo(self.view.mas_centerY) ;
-        make.width.mas_equalTo(self.cardView.frameSize.width) ;
-        make.height.mas_equalTo(self.cardView.frameSize.height) ;
-    }] ;
+    self.isInitial = NO ;
+    NSInteger value = (arc4random() % 12) + 1 ;
+    self.cardView = [[CardView alloc] initWithName:self.nameTextField.text andNumber:value] ;
 }
+
+- (void)refreshCardView{
+    NSInteger curValue = self.cardView.number ;
+    NSInteger value ;
+    while ((value = (arc4random() % 12) + 1)) {
+        if(value != curValue && curValue <=6 && value != curValue + 6) break ;
+        if(value != curValue && curValue > 6 && value != curValue - 6) break ;
+    }
+    self.cardView = [[CardView alloc] initWithName:self.cardView.label.text andNumber:value] ;
+}
+
+- (void)changeFrame{
+    NSInteger curValue = self.cardView.number ;
+    if(curValue <= 6) curValue += 6 ;
+    else curValue -=6 ;
+    self.cardView = [[CardView alloc] initWithName:self.cardView.label.text andNumber:curValue] ;
+}
+
 #pragma mark - setter
 - (void)setState:(CardState)state{
     _state = state ;
     if(state == CardStateCard){
-        
+        self.mojiScrollView.hidden = YES ;
+        self.saveBtn.hidden = NO;
+        self.cardView.hidden = NO ;
+        if(!self.isInitial){
+            self.refreshButton.hidden = NO ;
+            self.changeFrameButton.hidden = NO ;
+        }
+        else{
+            self.nameTextField.hidden = NO ;
+            self.genderLabel.hidden = NO ;
+            self.genderSelView.hidden = NO ;
+            self.nameLabel.hidden = NO ;
+            self.generateButton.hidden = NO ;
+        }
     }
     else{
+        self.saveBtn.hidden = YES;
+        self.mojiScrollView.hidden = NO ;
+        self.cardView.hidden = YES ;
+        self.refreshButton.hidden = YES ;
+        self.changeFrameButton.hidden = YES ;
         
+        self.nameTextField.hidden = YES ;
+        self.genderLabel.hidden = YES ;
+        self.genderSelView.hidden = YES ;
+        self.nameLabel.hidden = YES ;
+        self.generateButton.hidden = YES ;
     }
 }
 
 - (void)setIsInitial:(BOOL)isInitial{
     _isInitial = isInitial ;
     if(isInitial){
-        
+        self.changeFrameButton.hidden = YES ;
+        self.refreshButton.hidden = YES ;
     }
     else{
-        
+        self.saveBtn.hidden = NO;
+        self.refreshButton.hidden = NO ;
+        self.changeFrameButton.hidden = NO ;
+        self.nameTextField.hidden = YES ;
+        self.genderLabel.hidden = YES ;
+        self.genderSelView.hidden = YES ;
+        self.nameLabel.hidden = YES ;
+        self.generateButton.hidden = YES ;
     }
+}
+
+- (void)setCardView:(CardView *)cardView{
+    [_cardView removeFromSuperview] ;
+    _cardView = nil ;
+    _cardView = cardView ;
+    [self.view addSubview:_cardView] ;
+    [_cardView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX) ;
+        make.centerY.equalTo(self.view.mas_centerY) ;
+        make.width.mas_equalTo(self->_cardView.frameSize.width) ;
+        make.height.mas_equalTo(self->_cardView.frameSize.height) ;
+    }] ;
+}
+
+- (void)save{
+    UIGraphicsBeginImageContextWithOptions(self.cardView.bounds.size, 1, [[UIScreen mainScreen] scale]);
+    [self.cardView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        PHAssetChangeRequest * request = [PHAssetChangeRequest creationRequestForAssetFromImage:img];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        NSLog(@"success = %d, error = %@", success, error);
+    }];
 }
 @end

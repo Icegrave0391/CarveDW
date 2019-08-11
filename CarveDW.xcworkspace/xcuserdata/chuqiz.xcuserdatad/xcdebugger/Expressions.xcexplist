@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__37-[StoryViewController buttonClicked:]_block_invoke_2:StoryViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.storyViewArr">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MovieCanvasViewController preview]:MovieCanvasViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.gifView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MovieCanvasViewController setUpUI]:MovieCanvasViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.gifView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

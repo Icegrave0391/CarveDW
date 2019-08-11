@@ -195,7 +195,6 @@
         sender.alpha = 0 ;
     } completion:^(BOOL finished) {
         self.storyViewArr[tag-1].isShow = YES ;
-        NSLog(@"current image : %@", self.storyViewArr[tag-1].image) ;
         self.currentStoryView = self.storyViewArr[tag-1] ;
     }];
 }

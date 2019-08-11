@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (Bundle)
 + (UIImage *)getBundleImageName:(NSString *)imgName ;
++ (UIImage *)getBundleGifName:(NSString *)gifName;
 @end
 
 NS_ASSUME_NONNULL_END

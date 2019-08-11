@@ -15,6 +15,8 @@
 @property(nonatomic, strong)CABasicAnimation * page1ImgAnim ;
 //@property(nonatomic, strong)CABasicAnimation * page1DismissAnim ;
 @property(nonatomic, strong)CAAnimation * page2ImgAnim ;
+@property(nonatomic, strong)CAAnimation * page3ImgAnim ;
+@property(nonatomic, strong)CAAnimation * page3LabelAnim;
 @end
 
 @implementation CraftPageView
@@ -35,6 +37,7 @@
         [self setUIWithPage:page] ;
         //set timeoffset
         _timeOffset = 0 ;
+        _page3LabelOffset = 0;
     }
     return self ;
 }
@@ -114,6 +117,7 @@
     }
     if(page == 3){
         self.page3ImgView1 = [[UIImageView alloc] initWithImage:[UIImage getBundleImageName:@"page3_img1"]] ;
+        self.page3ImgView1.layer.speed = 0;
         [self addSubview:self.page3ImgView1] ;
         [self.page3ImgView1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.mas_top).with.offset(208) ;
@@ -122,6 +126,7 @@
             make.height.mas_equalTo(@471) ;
         }];
         self.page3ImgView2 = [[UIImageView alloc ] initWithImage:[UIImage getBundleImageName:@"page3_img2"]] ;
+        self.page3ImgView2.layer.speed = 0;
         [self addSubview:self.page3ImgView2] ;
         [self.page3ImgView2 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.mas_right).with.offset(-67) ;
@@ -130,6 +135,7 @@
             make.height.mas_equalTo(@417) ;
         }];
         self.page3TextView = [[UIImageView alloc] initWithImage:[UIImage getBundleImageName:@"page3_text"]] ;
+        self.page3TextView.layer.speed = 0;
         [self addSubview:self.page3TextView] ;
         [self.page3TextView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.mas_top).with.offset(353) ;
@@ -163,6 +169,8 @@
             make.width.mas_equalTo(@444) ;
             make.height.mas_equalTo(@393) ;
         }];
+        [self layoutIfNeeded];
+        self.page4TopInitPos = self.TopImgView.layer.position;
     }
     if(page == 5){
         self.page5TextView = [[UIImageView alloc] initWithImage:[UIImage getBundleImageName:@"page5_text"]] ;
@@ -284,6 +292,17 @@
 //        self.page2ImgAnim.timeOffset = timeOffset ;
         CAAnimation * an = self.page2ImgAnim ;
     }
+    if(self.page == 3){
+        self.page3ImgView1.layer.timeOffset = timeOffset;
+        self.page3ImgView2.layer.timeOffset = timeOffset;
+        self.page3ImgAnim.timeOffset = timeOffset;
+    }
+}
+
+- (void)setPage3LabelOffset:(CGFloat)page3LabelOffset{
+    _page3LabelOffset = page3LabelOffset;
+    self.page3TextView.layer.timeOffset = page3LabelOffset;
+    self.page3LabelAnim.timeOffset = page3LabelOffset;
 }
 
 - (CABasicAnimation *)page1ImgAnim{
@@ -337,5 +356,31 @@
         }
     }
     return _page2ImgAnim ;
+}
+
+- (CAAnimation *)page3ImgAnim{
+    if(!_page3ImgAnim){
+        CABasicAnimation * tran = [CABasicAnimation animation];
+        _page3ImgAnim = tran;
+        tran.keyPath = @"transform.translation.y";
+        tran.toValue = @(0);
+//        tran.keyPath = @"position";
+        tran.duration = 1;
+        [self.page3ImgView1.layer addAnimation:tran forKey:nil];
+        [self.page3ImgView2.layer addAnimation:tran forKey:nil];
+    }
+    return _page3ImgAnim;
+}
+
+- (CAAnimation *)page3LabelAnim{
+    if(!_page3LabelAnim){
+        CABasicAnimation * tran = [CABasicAnimation animation];
+        _page3LabelAnim = tran;
+        tran.keyPath = @"transform.translation.y";
+        tran.toValue = @(-500);
+        tran.duration = 1;
+        [self.page3TextView.layer addAnimation:tran forKey:nil];
+    }
+    return _page3LabelAnim;
 }
 @end

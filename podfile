@@ -5,6 +5,10 @@ target 'CarveDW' do
  #pod 'MLeaksFinder'
 #pod 'BundleLoader'
   pod 'Masonry', '~> 1.1.0'
+pod 'WMDragView'
+pod 'YYImage'
+# pod 'ReactiveCocoa', '~> 9.0'
+pod 'ReactiveObjC'
 #  pod 'Reveal-SDK', :configuration => ['Debug']
 end
 

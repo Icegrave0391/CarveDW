@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)UIImageView * page4ImgView ;
 @property(nonatomic, strong)UIImageView * page4TextView1 ;
 @property(nonatomic, strong)UIImageView * page4TextView2 ;
+@property(nonatomic, assign)CGPoint page4TopInitPos;
 //page5
 @property(nonatomic, strong)UIImageView * page5TextView ;
 @property(nonatomic, strong)UIImageView * page5ImgView1 ;
@@ -46,6 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 //core animation timeoffset
 @property(nonatomic, assign)NSInteger page ;
 @property(nonatomic, assign)CGFloat timeOffset ;
+@property(nonatomic, assign)CGFloat page3LabelOffset;
 - (instancetype)initWithPage:(NSInteger)page ;
 @end
 

@@ -19,6 +19,7 @@ const float kHorWidth = 2238.0 / 2;
     self = [super init] ;
     if(self){
         self.imgView = [[UIImageView alloc] initWithImage:[UIImage getBundleImageName:[NSString stringWithFormat:@"hb_%ld", (long)number]]] ;
+        _number = number ;
         if(number <= 6){
             [self setFrame:CGRectMake(0, 0, kVerWidth, kVerHeight)] ;
             [self.imgView setFrame:CGRectMake(0, 0, kVerWidth, kVerHeight)] ;
@@ -39,6 +40,8 @@ const float kHorWidth = 2238.0 / 2;
         self.label.textColor = [UIColor colorWithRed:131.0/255 green:24.0/255 blue:9.0/255 alpha:1] ;
         self.label.text = name ;
         CGSize size = [self.label.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:fnt, NSFontAttributeName, nil]] ;
+        CGFloat wid = size.width + 20 ;
+        size = CGSizeMake(wid, size.height) ;
         [self addSubview:self.label] ;
         [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(size.width) ;
@@ -49,13 +52,5 @@ const float kHorWidth = 2238.0 / 2;
     }
     return self ;
 }
-//+ (NSArray *)generateAllCardWithName:(NSString *)name{
-//    NSMutableArray * tempArr = [NSMutableArray array] ;
-//    for(int i = 0 ; i < 6 ; i++){
-//
-//    }
-//    NSArray * arr = [NSArray arrayWithArray:tempArr] ;
-//    return arr ;
-//}
 
 @end

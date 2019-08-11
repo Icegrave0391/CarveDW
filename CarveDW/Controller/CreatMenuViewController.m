@@ -9,6 +9,7 @@
 #import "CreatMenuViewController.h"
 #import "UIImage+Bundle.h"
 #import "CreatCardViewController.h"
+#import "CreatMovieViewController.h"
 #import <Masonry.h>
 @interface CreatMenuViewController ()
 
@@ -65,6 +66,10 @@
     if (sender.tag == 2) {
         CreatCardViewController * cardVC = [[CreatCardViewController alloc] init] ;
         [self presentViewController:cardVC animated:YES completion:nil] ;
+    }
+    else{
+        CreatMovieViewController * movieVC = [[CreatMovieViewController alloc] init];
+        [self presentViewController:movieVC animated:YES completion:nil];
     }
 }
 

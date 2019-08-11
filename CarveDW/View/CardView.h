@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)UIImageView * imgView ;
 @property(nonatomic, strong)UILabel * label ;
 @property(nonatomic, assign)CGSize frameSize ;
+@property(nonatomic, assign)NSInteger number ;
 
 - (instancetype)initWithName:(NSString *)name andNumber:(NSInteger)number ;
 //+ (NSArray *)generateAllCardWithName:(NSString *)name ;

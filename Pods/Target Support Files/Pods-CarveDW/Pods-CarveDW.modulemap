@@ -1,0 +1,6 @@
+module Pods_CarveDW {
+  umbrella header "Pods-CarveDW-umbrella.h"
+
+  export *
+  module * { export * }
+}

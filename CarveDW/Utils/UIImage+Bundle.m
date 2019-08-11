@@ -17,4 +17,13 @@
     UIImage * img = [UIImage imageWithContentsOfFile:[bundle pathForResource:imgName ofType:@"png"]] ;
     return img ;
 }
+
++ (UIImage *)getBundleGifName:(NSString *)gifName{
+    //get bundle
+    NSString * bdPath = [[NSBundle mainBundle] pathForResource:@"resourceBundle" ofType:@"bundle"] ;
+    NSBundle * bundle = [NSBundle bundleWithPath:bdPath] ;
+    //get image from file
+    UIImage * img = [UIImage imageWithContentsOfFile:[bundle pathForResource:gifName ofType:@"gif"]] ;
+    return img ;
+}
 @end
