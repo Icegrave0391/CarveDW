@@ -43,6 +43,7 @@
 @property(nonatomic, strong)NSString * mp3FilePath;
 @property(nonatomic, strong)UILabel * recordLabel;
 //@property(nonatomic, strong)UIView * dimView;
+@property(nonatomic, assign)BOOL isRecorded;
 @end
 
 @implementation MovieCanvasViewController
@@ -102,6 +103,7 @@ const float blank = 50.0;
             [btn setImage:[UIImage getBundleImageName:[NSString stringWithFormat:@"side_%d", i+1]] forState:UIControlStateNormal];
             [btn addTarget:self action:@selector(sideButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             if(i == 2){
+                //audio
                 [btn addGestureRecognizer:longPress];
             }
         }
@@ -303,7 +305,9 @@ const float blank = 50.0;
 //            [self resumeView];
 //        }
 //    }];
-    [self playRecord];
+    if(self.isRecorded){
+        [self playRecord];
+    }
 }
 
 - (void)resumeView{
@@ -353,6 +357,7 @@ const float blank = 50.0;
 }
 
 - (void)startRecordNotice{
+    self.isRecorded = YES;
     [self.view addSubview:self.recordLabel];
     [self deleteOldRecordFile];
     [self stopMusicWithUrl:[NSURL URLWithString:self.cafFilePath]];
