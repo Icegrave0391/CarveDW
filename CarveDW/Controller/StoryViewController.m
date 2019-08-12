@@ -146,9 +146,7 @@
     [self.view addGestureRecognizer:tap] ;
 }
 - (void)setPlayTime:(NSTimeInterval)playTime{
-//    NSLog(@"currrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr : %f", playTime) ;
     _playTime = playTime ;
-//    NSLog(@"sss %f:",_playTime) ;
     if(_playTime == 0){
         [self setInitButtonUI] ;
     }

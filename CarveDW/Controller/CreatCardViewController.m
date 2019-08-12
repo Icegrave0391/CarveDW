@@ -189,7 +189,7 @@ const float mojiSpacing = 55.0 ;
     });
     self.mojiScrollView = ({
         UIScrollView * scrollView = [[UIScrollView alloc] init] ;
-        scrollView.contentSize = CGSizeMake(4 * mojiWidth + 4 * mojiSpacing, mojiWidth) ;
+        scrollView.contentSize = CGSizeMake(8 * mojiWidth + 8 * mojiSpacing, mojiWidth) ;
         scrollView.contentOffset = CGPointMake(0, 0) ;
         scrollView.showsVerticalScrollIndicator = NO ;
         scrollView.showsHorizontalScrollIndicator = NO ;
@@ -200,9 +200,12 @@ const float mojiSpacing = 55.0 ;
             make.width.mas_equalTo(self.view.frame.size.width) ;
             make.height.mas_equalTo(mojiWidth) ;
         }];
-        for(int i = 0 ; i < 4 ; i++){
+        for(int i = 0 ; i < 8 ; i++){
             UIImageView * imgView = [[UIImageView alloc] initWithFrame:CGRectMake(mojiSpacing * (i+1) + mojiWidth * i, 0, mojiWidth, mojiWidth)] ;
             imgView.image = [UIImage getBundleImageName:[NSString stringWithFormat:@"moji_%d", i+1]];
+            imgView.userInteractionEnabled = YES;
+            UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mojiSave:)];
+            [imgView addGestureRecognizer:tap];
             [scrollView addSubview:imgView] ;
         }
         scrollView.hidden = YES ;
@@ -306,11 +309,11 @@ const float mojiSpacing = 55.0 ;
     _state = state ;
     if(state == CardStateCard){
         self.mojiScrollView.hidden = YES ;
-        self.saveBtn.hidden = NO;
         self.cardView.hidden = NO ;
         if(!self.isInitial){
             self.refreshButton.hidden = NO ;
             self.changeFrameButton.hidden = NO ;
+            self.saveBtn.hidden = NO;
         }
         else{
             self.nameTextField.hidden = NO ;
@@ -340,6 +343,7 @@ const float mojiSpacing = 55.0 ;
     if(isInitial){
         self.changeFrameButton.hidden = YES ;
         self.refreshButton.hidden = YES ;
+        self.saveBtn.hidden = YES;
     }
     else{
         self.saveBtn.hidden = NO;
@@ -369,6 +373,18 @@ const float mojiSpacing = 55.0 ;
 - (void)save{
     UIGraphicsBeginImageContextWithOptions(self.cardView.bounds.size, 1, [[UIScreen mainScreen] scale]);
     [self.cardView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        PHAssetChangeRequest * request = [PHAssetChangeRequest creationRequestForAssetFromImage:img];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        NSLog(@"success = %d, error = %@", success, error);
+    }];
+}
+
+- (void)mojiSave:(UITapGestureRecognizer *)tap{
+    UIImageView * imgView = (UIImageView *)tap.view;
+    UIGraphicsBeginImageContextWithOptions(imgView.bounds.size, 1, [[UIScreen mainScreen] scale]);
+    [imgView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
         PHAssetChangeRequest * request = [PHAssetChangeRequest creationRequestForAssetFromImage:img];

@@ -138,7 +138,6 @@
     //page3
     if(3 * kScreenHeight - 50 <= offset && offset <= 3 * kScreenHeight){
         self.pageArr[2].timeOffset = (offset + 50 - 3 * kScreenHeight) / (50);
-        NSLog(@"%@", [NSString stringWithFormat:@"off : %f", self.pageArr[2].timeOffset]);
     }
     if(3 * kScreenHeight < offset && offset < 3 * kScreenHeight + 200){
         self.pageArr[2].page3LabelOffset = (offset - 3 * kScreenHeight) / 200;
