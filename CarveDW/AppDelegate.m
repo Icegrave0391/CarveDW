@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "HomeViewController.h"
+//#import "HomeViewController.h"
+#import "InitViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,9 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]] ;
-    self.window.backgroundColor = [UIColor whiteColor] ;
-    HomeViewController * homeVC = [[HomeViewController alloc] init] ;
-    UINavigationController * rootVC = [[UINavigationController alloc] initWithRootViewController:homeVC] ;
+//    self.window.backgroundColor = [UIColor whiteColor] ;
+//    HomeViewController * homeVC = [[HomeViewController alloc] init] ;
+    [UIApplication sharedApplication].statusBarHidden = YES;
+    InitViewController * initVC = [[InitViewController alloc] init];
+    UINavigationController * rootVC = [[UINavigationController alloc] initWithRootViewController:initVC] ;
     [self.window setRootViewController:rootVC] ;
     [self.window makeKeyAndVisible] ;
     return YES;

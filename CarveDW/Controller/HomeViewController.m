@@ -42,7 +42,6 @@
 //    [super viewWillAppear:animated] ;
     [self.navigationController setNavigationBarHidden:YES animated:YES] ;
     [super viewWillAppear:animated] ;
-
 }
 - (void) setUI{
     //backview

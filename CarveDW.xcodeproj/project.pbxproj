@@ -41,6 +41,7 @@
 		08B2C1B222A5321600B4DF5E /* PushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C1B122A5321600B4DF5E /* PushTransition.m */; };
 		08EBC89222F3126D0013A797 /* CreatMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EBC89122F3126D0013A797 /* CreatMovieViewController.m */; };
 		08EBC89522F313D70013A797 /* MovieCategoryLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EBC89422F313D70013A797 /* MovieCategoryLabel.m */; };
+		08F48C402301D55100165C0D /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F48C3F2301D55100165C0D /* InitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,8 @@
 		08EBC89122F3126D0013A797 /* CreatMovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreatMovieViewController.m; sourceTree = "<group>"; };
 		08EBC89322F313D70013A797 /* MovieCategoryLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCategoryLabel.h; sourceTree = "<group>"; };
 		08EBC89422F313D70013A797 /* MovieCategoryLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCategoryLabel.m; sourceTree = "<group>"; };
+		08F48C3E2301D55100165C0D /* InitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitViewController.h; sourceTree = "<group>"; };
+		08F48C3F2301D55100165C0D /* InitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitViewController.m; sourceTree = "<group>"; };
 		390CE5BAC1DC61A1824D8457 /* Pods-CarveDW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarveDW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarveDW/Pods-CarveDW.debug.xcconfig"; sourceTree = "<group>"; };
 		6D447A4ED01017731F47A526 /* Pods-CarveDW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarveDW.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarveDW/Pods-CarveDW.release.xcconfig"; sourceTree = "<group>"; };
 		E33B984E36B578A5CE39B459 /* libPods-CarveDW.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CarveDW.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +250,8 @@
 		08B2C1A422A4A8B100B4DF5E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				08F48C3E2301D55100165C0D /* InitViewController.h */,
+				08F48C3F2301D55100165C0D /* InitViewController.m */,
 				08B2C1A022A411FB00B4DF5E /* HomeViewController.h */,
 				08B2C1A122A411FB00B4DF5E /* HomeViewController.m */,
 				08B2C1AC22A4FBDA00B4DF5E /* OverViewController.h */,
@@ -462,6 +467,7 @@
 				085EC12222F6D11000B827FE /* MovieSideView.m in Sources */,
 				08EBC89522F313D70013A797 /* MovieCategoryLabel.m in Sources */,
 				08B2C17E22A4114300B4DF5E /* main.m in Sources */,
+				08F48C402301D55100165C0D /* InitViewController.m in Sources */,
 				085EC11522F6BA9200B827FE /* MovieCanvasViewController.m in Sources */,
 				0878648122C6624100035CF0 /* NSURL+VideoBundle.m in Sources */,
 				0878649322C8F27500035CF0 /* CreatMenuViewController.m in Sources */,
