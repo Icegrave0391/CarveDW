@@ -10,11 +10,14 @@
 
 @implementation NSURL (VideoBundle)
 
-+ (NSURL *)videoURLWithName:(NSString *)videoName{
++ (NSURL *)videoURLWithName:(NSString *)videoName andType:(nonnull NSString *)type{
     NSString * bdPath = [[NSBundle mainBundle] pathForResource:@"resourceBundle" ofType:@"bundle"] ;
     NSBundle * bundle = [NSBundle bundleWithPath:bdPath] ;
-    NSString * videoPath = [bundle pathForResource:videoName ofType:@"mp4"] ;
+    NSString * videoPath = [bundle pathForResource:videoName ofType:type] ;
     return [NSURL fileURLWithPath:videoPath] ;
 }
 
++ (NSURL *)videoURLWithMainBundle:(NSString *)videoName andType:(NSString *)type{
+    return [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:videoName ofType:type]];
+}
 @end

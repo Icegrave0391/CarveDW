@@ -63,7 +63,7 @@
 - (UIScrollView *)scrollView{
     if(!_scrollView){
         _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds] ;
-        _scrollView.pagingEnabled = YES ;
+//        _scrollView.pagingEnabled = YES ;
         _scrollView.scrollEnabled = YES ;
         _scrollView.showsVerticalScrollIndicator = NO ;
         _scrollView.showsHorizontalScrollIndicator = NO ;

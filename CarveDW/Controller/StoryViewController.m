@@ -10,6 +10,9 @@
 #import <Masonry.h>
 #import "UIImage+Bundle.h"
 #import "StoryView.h"
+
+#define COMMON_META_KEY     @"commonMetadata"
+#define AVAILABLE_META_KEY  @"availableMetadataFormats"
 @interface StoryViewController ()
 
 //@property(nonatomic, assign)CMTime playTime ;
@@ -28,7 +31,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view.layer addSublayer:self.playerLayer] ;
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.contentView = [[UIView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.contentView];
+    [self.contentView.layer addSublayer:self.playerLayer] ;
     //return navigation
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(navigationReturn)
@@ -38,11 +44,18 @@
     [self setUpUI] ;
 }
 
+- (void)viewDidLayoutSubviews{
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    self.playerLayer.frame = self.view.bounds;
+    [CATransaction commit];
+}
+
 - (AVPlayerLayer *)playerLayer{
     if(!_playerLayer){
-        NSURL * movieURL = [NSURL videoURLWithName:@"故事"] ;
+        NSURL * movieURL = [NSURL videoURLWithName:@"故事" andType:@"mov"] ;
         _playerLayer = [AVPlayerLayer playerLayerWithPlayer:[[AVPlayer alloc] initWithURL: movieURL]] ;
-        _playerLayer.frame = [UIScreen mainScreen].bounds ;
+        _playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
         __weak typeof (self) weakSelf = self ;
         [_playerLayer.player addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
             weakSelf.playTime = time.value / time.timescale ;
@@ -233,6 +246,7 @@
 }
 
 - (void)navigationReturn{
+    [self.playerLayer.player pause];
     [self dismissViewControllerAnimated:YES completion:nil] ;
 }
 @end

@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.bgView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.bgView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.bgView];
     [self.bgView.layer addSublayer:self.playerLayer] ;
     //return navigation
@@ -37,13 +38,14 @@
 }
 
 - (void)navigationPush{
+    [self.playerLayer.player pause];
     HomeViewController * homeVC = [[HomeViewController alloc] init];
     [self presentViewController:homeVC animated:YES completion:nil];
 }
 
 - (AVPlayerLayer *)playerLayer{
     if(!_playerLayer){
-        NSURL * movieURL = [NSURL videoURLWithName:@"init"] ;
+        NSURL * movieURL = [NSURL videoURLWithName:@"init" andType:@"mov"] ;
         _playerLayer = [AVPlayerLayer playerLayerWithPlayer:[[AVPlayer alloc] initWithURL: movieURL]] ;
         _playerLayer.frame = [UIScreen mainScreen].bounds ;
         __weak typeof (self) weakSelf = self ;

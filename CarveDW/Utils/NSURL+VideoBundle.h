@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSURL (VideoBundle)
 
-+(NSURL *)videoURLWithName:(NSString *)videoName;
-
++(NSURL *)videoURLWithName:(NSString *)videoName andType:(NSString *)type;
++ (NSURL *)videoURLWithMainBundle:(NSString *)videoName andType:(NSString *)type;
 @end
 
 NS_ASSUME_NONNULL_END
